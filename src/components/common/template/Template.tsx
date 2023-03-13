@@ -10,5 +10,7 @@ type TemplateProps = {
 export const Template = ({ children }: TemplateProps) => {
   const mode = useRecoilValue(getModeState);
 
-  return <Layout>{children}</Layout>;
+  console.log(typeof mode);
+
+  return <Layout mode={mode}>{children}</Layout>;
 };
