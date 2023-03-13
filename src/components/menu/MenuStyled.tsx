@@ -42,14 +42,14 @@ export const MenuItem = styled.li`
 `;
 
 export const MenuIcon = styled.div<{ mode: boolean }>`
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
   background-image: url(${DARKMODE});
   background-repeat: no-repeat;
   background-size: cover;
 
-  transform: rotate(${(prop) => (prop.mode ? 0 : 180)}deg);
+  transform: scaleX(${(prop) => (prop.mode ? '' : -1)});
 
   transition: 0.5s all;
 
