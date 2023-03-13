@@ -1,4 +1,4 @@
 /* Common */
-export { Layout } from './common/layout/Layout';
+export { Template } from './common/template/Template';
 
 export { Menu } from './menu/Menu';

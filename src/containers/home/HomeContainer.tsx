@@ -1,7 +1,7 @@
-import { Layout } from '../../components';
+import { Template } from '../../components';
 
 const HomeContainer = () => {
-  return <Layout></Layout>;
+  return <Template>ㅎㅇ</Template>;
 };
 
 export default HomeContainer;
