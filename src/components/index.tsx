@@ -1,4 +1,4 @@
 /* Common */
-import { Layout } from './common/layout/Layout';
+export { Layout } from './common/layout/Layout';
 
-import { Menu } from './menu/Menu';
+export { Menu } from './menu/Menu';

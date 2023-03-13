@@ -1,5 +1,5 @@
 import Router from './router/Router';
-import { Menu } from './components/menu/Menu';
+import { Menu } from './components';
 import './App.css';
 
 function App() {
