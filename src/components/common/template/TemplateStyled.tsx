@@ -10,3 +10,12 @@ export const Layout = styled.div<{ mode: boolean }>`
   background-color: ${(prop) =>
     prop.mode ? 'rgb(250, 250, 250);' : 'rgb(45, 45, 45);'};
 `;
+
+export const NoteLayout = styled.div`
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 1rem;
+`;
