@@ -5,6 +5,7 @@ import { Layout, NoteLayout } from './TemplateStyled';
 
 type TemplateProps = {
   children: ReactElement[] | ReactElement | string;
+  responsive?: boolean;
 };
 
 export const Template = ({ children }: TemplateProps) => {
@@ -14,6 +15,6 @@ export const Template = ({ children }: TemplateProps) => {
   return <Layout mode={mode}>{children}</Layout>;
 };
 
-export const NoteTemplate = ({ children }: TemplateProps) => {
-  return <NoteLayout>{children}</NoteLayout>;
+export const NoteTemplate = ({ children, responsive }: TemplateProps) => {
+  return <NoteLayout responsive={responsive}>{children}</NoteLayout>;
 };
