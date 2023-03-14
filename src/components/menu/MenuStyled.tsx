@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import DARKMODE from '../../assets/image/darkmode.png';
 
 export const Box = styled.div<{ mode: boolean }>`
   position: absolute;
@@ -23,7 +22,7 @@ export const List = styled.ul`
   flex-direction: column;
 `;
 
-export const MenuItem = styled.li<{ mode: boolean }>`
+export const MenuItem = styled.li`
   width: 4rem;
   height: 4rem;
 
@@ -36,16 +35,20 @@ export const MenuItem = styled.li<{ mode: boolean }>`
   cursor: pointer;
 
   :hover {
-    background-color: ${(prop) =>
-      prop.mode ? 'rgb(45, 45, 45, 0.3)' : 'rgb(245, 245, 245, 0.3)'};
+    background-color: rgb(204, 204, 204, 0.3);
   }
 `;
 
-export const MenuIcon = styled.div<{ mode: boolean }>`
+interface MenuProps {
+  icon: any;
+  mode?: boolean;
+}
+
+export const MenuIcon = styled.div<MenuProps>`
   width: 2.5rem;
   height: 2.5rem;
 
-  background-image: url(${DARKMODE});
+  background-image: url(${(prop) => prop.icon});
   background-repeat: no-repeat;
   background-size: cover;
 
