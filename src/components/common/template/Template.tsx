@@ -8,9 +8,8 @@ type TemplateProps = {
 };
 
 export const Template = ({ children }: TemplateProps) => {
+  // 모드 변수
   const mode = useRecoilValue(getModeState);
-
-  console.log(typeof mode);
 
   return <Layout mode={mode}>{children}</Layout>;
 };
