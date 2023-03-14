@@ -1,7 +1,12 @@
-import { Template } from '../../components';
+import { Preview, Template, Write } from '../../components';
 
 const HomeContainer = () => {
-  return <Template>ㅎㅇzzzz</Template>;
+  return (
+    <Template>
+      <Write />
+      <Preview />
+    </Template>
+  );
 };
 
 export default HomeContainer;
