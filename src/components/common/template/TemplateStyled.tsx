@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
-export const Layout = styled.div<{ mode: boolean }>`
+interface LayoutProps {
+  mode: boolean;
+  direction?: string;
+}
+
+export const Layout = styled.div<LayoutProps>`
   flex: 1;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(prop) => prop.direction};
 
   color: ${(prop) => (prop.mode ? 'black' : 'white')};
   background-color: ${(prop) =>

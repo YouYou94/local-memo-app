@@ -1,10 +1,9 @@
-import { Preview, Template, Write } from '../../components';
+import { Template, Enrol } from '../../components';
 
 const HomeContainer = () => {
   return (
-    <Template>
-      <Write />
-      <Preview />
+    <Template direction={'column'}>
+      <Enrol />
     </Template>
   );
 };
