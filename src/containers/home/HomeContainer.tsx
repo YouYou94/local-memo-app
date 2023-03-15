@@ -1,8 +1,11 @@
-import { Template, Enrol } from '../../components';
+import { Clock, Enrol, Template } from '../../components';
+
+const COLUMN = 'column';
 
 const HomeContainer = () => {
   return (
-    <Template direction={'column'}>
+    <Template direction={COLUMN}>
+      <Clock />
       <Enrol />
     </Template>
   );
