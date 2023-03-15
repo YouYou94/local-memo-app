@@ -1,5 +1,7 @@
+import { UserContainer } from '../../containers';
+
 const User = () => {
-  return <></>;
+  return <UserContainer />;
 };
 
 export default User;
