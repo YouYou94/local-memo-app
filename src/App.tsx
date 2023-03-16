@@ -1,13 +1,14 @@
 import Router from './router/Router';
-import { Menu } from './components';
+import { RecoilRoot } from 'recoil';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Menu />
-      <Router />
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <Router />
+      </div>
+    </RecoilRoot>
   );
 }
 
