@@ -45,6 +45,14 @@ a:hover {
 }
 
 .App {
+  position: relative;
+
   width: 100%;
   height: 100vh;
+
+  display: flex;
+
+  background-color: rgb(250, 250, 250);
+
+  overflow: hidden;
 }
