@@ -10,7 +10,7 @@ const HomeContainer = () => {
   return (
     <Template direction={COLUMN}>
       <Clock />
-      {user ? <Manage /> : <Enrol handleSetUser={setUser} />}
+      {user ? <Manage user={user} /> : <Enrol handleSetUser={setUser} />}
     </Template>
   );
 };
