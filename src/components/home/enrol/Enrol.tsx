@@ -3,7 +3,11 @@ import { Box, EnrolBox, EnrolInput } from '../HomeStyled';
 
 const START = 'start';
 
-export const Enrol = () => {
+type EnrolProps = {
+  handleSetUser: any;
+};
+
+export const Enrol = ({ handleSetUser }: EnrolProps) => {
   const [name, setName] = useState<string>('');
 
   const onChangeNameInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +27,13 @@ export const Enrol = () => {
         return;
       }
 
-      localStorage.setItem('user', name);
+      const object = {
+        name: name,
+        manage: [],
+      };
+
+      localStorage.setItem('user', JSON.stringify(object));
+      handleSetUser(object);
       setName('');
     }
   };
