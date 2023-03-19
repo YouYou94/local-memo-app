@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, TimeBox, TimeSpan, ColonSpan } from '../HomeStyled';
-
-const END = 'end';
+import { Box, TimeBox, TimeSpan, ColonSpan } from './ClockStyled';
 
 export const Clock = () => {
   const [time, setTime] = useState<any>(new Date());
@@ -17,7 +15,7 @@ export const Clock = () => {
   }, []);
 
   return (
-    <Box align={END}>
+    <Box>
       <TimeBox>
         <TimeSpan>{hour}</TimeSpan>
         <ColonSpan>:</ColonSpan>

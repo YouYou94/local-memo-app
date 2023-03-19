@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Box, EnrolBox, EnrolInput } from '../HomeStyled';
-
-const START = 'start';
+import { Box, EnrolBox, EnrolInput } from './EnrolStyled';
 
 type EnrolProps = {
   handleSetUser: any;
@@ -39,7 +37,7 @@ export const Enrol = ({ handleSetUser }: EnrolProps) => {
   };
 
   return (
-    <Box align={START}>
+    <Box>
       <EnrolBox>
         <EnrolInput
           value={name}
