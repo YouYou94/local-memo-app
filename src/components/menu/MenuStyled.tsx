@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Box = styled.div<{ mode: boolean }>`
   position: absolute;
 
-  right: 0;
+  right: -4rem;
 
   width: 4rem;
   height: 100vh;
@@ -12,6 +12,27 @@ export const Box = styled.div<{ mode: boolean }>`
 
   border-left: 1px solid rgb(204, 204, 204);
 
+  background-color: ${(prop) => (prop.mode ? 'white' : 'rgb(30, 30, 30)')};
+
+  transition: 0.3s all;
+
+  :hover {
+    right: 0;
+  }
+`;
+
+export const DisplayButton = styled.button<{ mode: boolean }>`
+  position: absolute;
+
+  top: 0.5rem;
+  left: -2.5rem;
+
+  width: 2.5rem;
+  height: 6rem;
+
+  border: 1px solid rgb(204, 204, 204);
+
+  color: ${(prop) => (prop.mode ? 'black' : 'white')};
   background-color: ${(prop) => (prop.mode ? 'white' : 'rgb(30, 30, 30)')};
 `;
 
