@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, DisplayButton, List, MenuIcon, MenuItem } from './MenuStyled';
 import HOME from '../../assets/image/home.png';
 import DARKMODE from '../../assets/image/darkmode.png';
+import Add from '../../assets/image/add.png';
 
 export const Menu = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ export const Menu = () => {
   const onClickHomeMenu = () => navigate('/noteapp');
 
   const onClickModeChanger = () => setMode(!mode);
+
+  const onClickAddNote = () => {};
 
   return (
     <Box mode={mode}>
@@ -26,6 +29,9 @@ export const Menu = () => {
         </MenuItem>
         <MenuItem onClick={onClickModeChanger} title="화면대비">
           <MenuIcon icon={DARKMODE} mode={mode} />
+        </MenuItem>
+        <MenuItem onClick={onClickAddNote} title="노트추가">
+          <MenuIcon icon={Add} />
         </MenuItem>
       </List>
     </Box>
