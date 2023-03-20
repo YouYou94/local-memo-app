@@ -76,7 +76,4 @@ export const MenuIcon = styled.div<MenuProps>`
   transform: scaleX(${(prop) => (prop.mode ? '' : -1)});
 
   transition: 0.5s all;
-
-  ${MenuItem}:hover & {
-  }
 `;
