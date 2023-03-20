@@ -5,7 +5,9 @@ const COLUMN = 'column';
 
 const HomeContainer = () => {
   // 유저 정보 체크
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<string>(localStorage.getItem('user') || '');
+
+  console.log(user);
 
   return (
     <Template direction={COLUMN}>

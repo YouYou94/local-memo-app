@@ -25,13 +25,9 @@ export const Enrol = ({ handleSetUser }: EnrolProps) => {
         return;
       }
 
-      const object = {
-        name: name,
-        manage: [],
-      };
-
-      localStorage.setItem('user', JSON.stringify(object));
-      handleSetUser(object);
+      localStorage.setItem('user', name);
+      localStorage.setItem('manage', JSON.stringify([]));
+      handleSetUser(name);
       setName('');
     }
   };
