@@ -10,8 +10,6 @@ const HomeContainer = () => {
   // Write 페이지가 따로 존재해야할듯
   const [user, setUser] = useState<string>(localStorage.getItem('user') || '');
 
-  console.log(user);
-
   return (
     <Template direction={COLUMN}>
       <Clock />
