@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Box = styled.div<{ mode: boolean }>`
+export const Box = styled.div<{ mode: string }>`
   position: absolute;
 
   right: -4rem;
@@ -12,7 +12,8 @@ export const Box = styled.div<{ mode: boolean }>`
 
   border-left: 1px solid rgb(204, 204, 204);
 
-  background-color: ${(prop) => (prop.mode ? 'white' : 'rgb(30, 30, 30)')};
+  background-color: ${(prop) =>
+    prop.mode === 'bright' ? 'white' : 'rgb(30, 30, 30)'};
 
   transition: 0.3s all;
 
@@ -21,7 +22,7 @@ export const Box = styled.div<{ mode: boolean }>`
   }
 `;
 
-export const DisplayButton = styled.button<{ mode: boolean }>`
+export const DisplayButton = styled.button<{ mode: string }>`
   position: absolute;
 
   top: 0.5rem;
@@ -32,8 +33,9 @@ export const DisplayButton = styled.button<{ mode: boolean }>`
 
   border: 1px solid rgb(204, 204, 204);
 
-  color: ${(prop) => (prop.mode ? 'black' : 'white')};
-  background-color: ${(prop) => (prop.mode ? 'white' : 'rgb(30, 30, 30)')};
+  color: ${(prop) => (prop.mode === 'bright' ? 'black' : 'white')};
+  background-color: ${(prop) =>
+    prop.mode === 'bright' ? 'white' : 'rgb(30, 30, 30)'};
 `;
 
 export const List = styled.ul`
@@ -62,7 +64,7 @@ export const MenuItem = styled.li`
 
 interface MenuProps {
   icon: any;
-  mode?: boolean;
+  mode?: string;
 }
 
 export const MenuIcon = styled.div<MenuProps>`
@@ -73,7 +75,7 @@ export const MenuIcon = styled.div<MenuProps>`
   background-repeat: no-repeat;
   background-size: cover;
 
-  transform: scaleX(${(prop) => (prop.mode ? '' : -1)});
+  transform: scaleX(${(prop) => (prop.mode === 'bright' ? '' : -1)});
 
   transition: 0.5s all;
 `;

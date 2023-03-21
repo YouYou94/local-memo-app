@@ -1,18 +1,16 @@
 import { useRecoilState } from 'recoil';
 import { modeState } from '../../recoil/atom';
-import { useNavigate } from 'react-router-dom';
 import { Box, DisplayButton, List, MenuIcon, MenuItem } from './MenuStyled';
 import HOME from '../../assets/image/home.png';
 import DARKMODE from '../../assets/image/darkmode.png';
 import Add from '../../assets/image/add.png';
 
 export const Menu = () => {
-  const navigate = useNavigate();
-  const [mode, setMode] = useRecoilState<boolean>(modeState);
+  const [mode, setMode] = useRecoilState<string>(modeState);
 
-  const onClickHomeMenu = () => navigate('/noteapp');
+  const onClickHomeMenu = () => {};
 
-  const onClickModeChanger = () => setMode(!mode);
+  const onClickModeChanger = () => {};
 
   const onClickAddNote = () => {};
 
