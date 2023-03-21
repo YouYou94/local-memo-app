@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Box, EnrolBox, EnrolInput } from './EnrolStyled';
 
 type EnrolProps = {
-  handleSetUser: any;
+  setUser: any;
 };
 
-export const Enrol = ({ handleSetUser }: EnrolProps) => {
+export const Enrol = ({ setUser }: EnrolProps) => {
   const [name, setName] = useState<string>('');
 
   const onChangeNameInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ export const Enrol = ({ handleSetUser }: EnrolProps) => {
 
       localStorage.setItem('user', name);
       localStorage.setItem('manage', JSON.stringify([]));
-      handleSetUser(name);
+      setUser(name);
       setName('');
     }
   };
