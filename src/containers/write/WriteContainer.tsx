@@ -1,5 +1,7 @@
+import { Template } from '../../components';
+
 const WriteContainer = () => {
-  return <>쓰기</>;
+  return <Template>쓰기</Template>;
 };
 
 export default WriteContainer;
