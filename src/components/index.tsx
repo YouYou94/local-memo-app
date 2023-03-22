@@ -3,8 +3,8 @@ export { Template } from './common/template/Template';
 
 /* Components */
 export { Menu } from './menu/Menu';
-export { Preview } from './preview/Preview';
-export { Write } from './write/Write';
+export { Preview } from './writing/preview/Preview';
+export { Write } from './writing/write/Write';
 
 /* Home */
 export { Clock } from './home/clock/Clock';
