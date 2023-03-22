@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Clock, Enrol, Template } from '../../components';
+import { Clock, Enrol, Greeting, Template } from '../../components';
 
 const COLUMN = 'column';
 
@@ -9,7 +9,7 @@ const HomeContainer = () => {
   return (
     <Template direction={COLUMN}>
       <Clock />
-      <Enrol setUser={setUser} />
+      {user ? <Greeting user={user} /> : <Enrol setUser={setUser} />}
     </Template>
   );
 };
