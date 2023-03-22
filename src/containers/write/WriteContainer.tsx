@@ -1,7 +1,9 @@
 import { Template } from '../../components';
 
+const ROW = 'row';
+
 const WriteContainer = () => {
-  return <Template>쓰기</Template>;
+  return <Template direction={ROW}>글쓰기</Template>;
 };
 
 export default WriteContainer;

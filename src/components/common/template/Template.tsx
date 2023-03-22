@@ -1,12 +1,11 @@
 import { ReactElement } from 'react';
 import { useRecoilValue } from 'recoil';
 import { getModeState } from '../../../recoil/selector';
-import { Layout, NoteLayout } from './TemplateStyled';
+import { Layout } from './TemplateStyled';
 
 type TemplateProps = {
   children: ReactElement[] | ReactElement | string;
   direction?: string;
-  responsive?: boolean;
 };
 
 export const Template = ({ direction, children }: TemplateProps) => {
@@ -18,8 +17,4 @@ export const Template = ({ direction, children }: TemplateProps) => {
       {children}
     </Layout>
   );
-};
-
-export const NoteTemplate = ({ children, responsive }: TemplateProps) => {
-  return <NoteLayout responsive={responsive}>{children}</NoteLayout>;
 };

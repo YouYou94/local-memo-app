@@ -1,5 +1,5 @@
 /* Common */
-export { Template, NoteTemplate } from './common/template/Template';
+export { Template } from './common/template/Template';
 
 /* Components */
 export { Menu } from './menu/Menu';
