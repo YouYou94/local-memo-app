@@ -10,6 +10,8 @@ export const Preview = ({ state }: PreviewProps) => {
 
   console.log(state.split('\n'));
 
+  // ·
+
   return (
     <Box>
       <Section>
