@@ -22,12 +22,6 @@ type PreviewProps = {
 };
 
 export const Preview = ({ state }: PreviewProps) => {
-  //console.log(state);
-
-  //console.log(state.split('\n'));
-
-  // · ◦
-
   return (
     <Box>
       <Section>
