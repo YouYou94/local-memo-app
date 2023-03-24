@@ -1,5 +1,18 @@
 import { Fragment } from 'react';
-import { Box, Section, H1, H2, H3, H4, H5, H6 } from './PreviewStyled';
+import {
+  Box,
+  Section,
+  Span,
+  Br,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  ListSpan,
+  ListDot,
+} from './PreviewStyled';
 
 type PreviewProps = {
   state: string;
@@ -10,7 +23,7 @@ export const Preview = ({ state }: PreviewProps) => {
 
   console.log(state.split('\n'));
 
-  // ·
+  // · ◦
 
   return (
     <Box>
@@ -32,14 +45,23 @@ export const Preview = ({ state }: PreviewProps) => {
             value = <H2>{v.substring(3)}</H2>;
           else if (v.substring(0, 2) === '# ')
             value = <H1>{v.substring(2)}</H1>;
-          else value = v;
+          else if (v.substring(0, 2) === '- ')
+            value = (
+              <ListSpan>
+                <ListDot> · </ListDot>
+                {v.substring(2)}
+                <Br />
+              </ListSpan>
+            );
+          else
+            value = (
+              <Span>
+                {v}
+                <Br />
+              </Span>
+            );
 
-          return (
-            <Fragment key={index}>
-              <br />
-              {value}
-            </Fragment>
-          );
+          return <Fragment key={index}>{value}</Fragment>;
         })}
       </Section>
     </Box>
