@@ -54,7 +54,12 @@ export const Preview = ({ state }: PreviewProps) => {
                 <Br />
               </ListSpan>
             );
-          else if (v === '---') value = <Line />;
+          else if (
+            v.substring(0, 3) === '---' ||
+            v.substring(0, 3) === '___' ||
+            v.substring(0, 3) === '***'
+          )
+            value = <Line />;
           else
             value = (
               <Span>
