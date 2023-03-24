@@ -59,3 +59,8 @@ export const Line = styled.div`
   margin: 0.5rem 0;
   border: 1px solid rgb(204, 204, 204);
 `;
+
+/* Italic */
+export const ItalicSpan = styled.span`
+  font-style: italic;
+`;

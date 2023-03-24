@@ -13,6 +13,7 @@ import {
   ListSpan,
   ListDot,
   Line,
+  ItalicSpan,
 } from './PreviewStyled';
 
 type PreviewProps = {
@@ -31,7 +32,8 @@ export const Preview = ({ state }: PreviewProps) => {
       <Section>
         {state.split('\n').map((v, index) => {
           let value = null;
-
+          /* ──────────────────────────────────────── */
+          /* H1 ~ H6 */
           if (v.substring(0, 7) === '###### ')
             value = <H6>{v.substring(7)}</H6>;
           else if (v.substring(0, 6) === '##### ')
@@ -44,7 +46,8 @@ export const Preview = ({ state }: PreviewProps) => {
             value = <H2>{v.substring(3)}</H2>;
           else if (v.substring(0, 2) === '# ')
             value = <H1>{v.substring(2)}</H1>;
-          else if (v.substring(0, 2) === '- ')
+          /* ──────────────────────────────────────── */
+          /* LIST */ else if (v.substring(0, 2) === '- ')
             value = (
               <ListSpan>
                 <ListDot> · </ListDot>
@@ -52,13 +55,42 @@ export const Preview = ({ state }: PreviewProps) => {
                 <Br />
               </ListSpan>
             );
-          /* Line */ else if (
+          /* ──────────────────────────────────────── */
+          /* LINE */ else if (
             v.substring(0, 3) === '---' ||
             v.substring(0, 3) === '___' ||
             v.substring(0, 3) === '***'
           )
             value = <Line />;
-          else
+          /* ──────────────────────────────────────── */
+          /* ITALIC */ else if (v.includes('_'))
+            value = (
+              <Span>
+                {v
+                  .replaceAll('_', '〃_〃')
+                  .split('〃')
+                  .map((element, index) => {
+                    //console.log(element);
+                    //console.log(v.replaceAll('_', '〃_〃').split('〃'));
+
+                    let italicValue = null;
+                    if (element === '') italicValue = null;
+                    else if (
+                      v.replaceAll('_', '〃_〃').split('〃')[index - 1] ===
+                        '_' &&
+                      v.replaceAll('_', '〃_〃').split('〃')[index + 1] === '_'
+                    )
+                      italicValue = <ItalicSpan>{element}</ItalicSpan>;
+                    else if (element === '_') italicValue = null;
+                    else italicValue = element;
+
+                    return italicValue;
+                  })}
+                <Br />
+              </Span>
+            );
+          /* ──────────────────────────────────────── */
+          /* DEFAULT */ else
             value = (
               <Span>
                 {v}
