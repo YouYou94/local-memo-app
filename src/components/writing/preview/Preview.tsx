@@ -14,6 +14,7 @@ import {
   ListDot,
   Line,
   ItalicSpan,
+  ThroughSpan,
 } from './PreviewStyled';
 
 type PreviewProps = {
@@ -70,10 +71,8 @@ export const Preview = ({ state }: PreviewProps) => {
                   .replaceAll('_', '〃_〃')
                   .split('〃')
                   .map((element, index) => {
-                    //console.log(element);
-                    //console.log(v.replaceAll('_', '〃_〃').split('〃'));
-
                     let italicValue = null;
+
                     if (element === '') italicValue = null;
                     else if (
                       v.replaceAll('_', '〃_〃').split('〃')[index - 1] ===
@@ -82,6 +81,32 @@ export const Preview = ({ state }: PreviewProps) => {
                     )
                       italicValue = <ItalicSpan>{element}</ItalicSpan>;
                     else if (element === '_') italicValue = null;
+                    else italicValue = element;
+
+                    return italicValue;
+                  })}
+                <Br />
+              </Span>
+            );
+          /* ──────────────────────────────────────── */
+          /* LINE THROUGH */ else if (v.includes('~~'))
+            value = (
+              <Span>
+                {v
+                  .replaceAll('~~', '〃~~〃')
+                  .split('〃')
+                  .map((element, index) => {
+                    let italicValue = null;
+
+                    if (element === '') italicValue = null;
+                    else if (
+                      v.replaceAll('~~', '〃~~〃').split('〃')[index - 1] ===
+                        '~~' &&
+                      v.replaceAll('~~', '〃~~〃').split('〃')[index + 1] ===
+                        '~~'
+                    )
+                      italicValue = <ThroughSpan>{element}</ThroughSpan>;
+                    else if (element === '~~') italicValue = null;
                     else italicValue = element;
 
                     return italicValue;

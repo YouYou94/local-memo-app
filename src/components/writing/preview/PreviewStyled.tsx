@@ -64,3 +64,8 @@ export const Line = styled.div`
 export const ItalicSpan = styled.span`
   font-style: italic;
 `;
+
+/* Line Through */
+export const ThroughSpan = styled.span`
+  text-decoration: line-through;
+`;
