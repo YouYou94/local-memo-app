@@ -21,9 +21,9 @@ export const Section = styled.section`
 export const Span = styled.span`
   line-height: 0%;
 `;
-
 export const Br = styled.br``;
 
+/* H1 ~ H6 */
 export const H1 = styled.h1`
   font-size: 2rem;
 `;
@@ -43,13 +43,19 @@ export const H6 = styled.h6`
   font-size: 0.67rem;
 `;
 
+/* List */
 export const ListSpan = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
-
 export const ListDot = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+/* Line */
+export const Line = styled.div`
+  margin: 0.5rem 0;
+  border: 1px solid rgb(204, 204, 204);
 `;
