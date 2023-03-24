@@ -20,9 +20,9 @@ type PreviewProps = {
 };
 
 export const Preview = ({ state }: PreviewProps) => {
-  console.log(state);
+  //console.log(state);
 
-  console.log(state.split('\n'));
+  //console.log(state.split('\n'));
 
   // · ◦
 
@@ -31,8 +31,6 @@ export const Preview = ({ state }: PreviewProps) => {
       <Section>
         {state.split('\n').map((v, index) => {
           let value = null;
-
-          console.log(v.substring(0, 5));
 
           if (v.substring(0, 7) === '###### ')
             value = <H6>{v.substring(7)}</H6>;
@@ -54,7 +52,7 @@ export const Preview = ({ state }: PreviewProps) => {
                 <Br />
               </ListSpan>
             );
-          else if (
+          /* Line */ else if (
             v.substring(0, 3) === '---' ||
             v.substring(0, 3) === '___' ||
             v.substring(0, 3) === '***'
