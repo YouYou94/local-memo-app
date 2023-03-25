@@ -13,6 +13,8 @@ export const Header = styled.header`
   height: 5rem;
 `;
 
+export const TitleInput = styled.input``;
+
 export const Section = styled.section`
   flex: 1;
 
