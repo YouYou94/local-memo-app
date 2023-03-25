@@ -1,4 +1,5 @@
-import { Box, Header, Section, WriteArea } from './WriteStyled';
+import { useState } from 'react';
+import { Box, Header, TitleInput, Section, WriteArea } from './WriteStyled';
 
 type WriteProps = {
   state: string;
@@ -6,6 +7,16 @@ type WriteProps = {
 };
 
 export const Write = ({ state, setState }: WriteProps) => {
+  const [title, setTitle] = useState<string>('');
+
+  const handleChangeTitleInput = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const { value } = event.target;
+
+    setTitle(value);
+  };
+
   const handleChangeWriteArea = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
@@ -16,7 +27,13 @@ export const Write = ({ state, setState }: WriteProps) => {
 
   return (
     <Box>
-      <Header>세팅 메뉴</Header>
+      <Header>
+        <TitleInput
+          value={title}
+          onChange={handleChangeTitleInput}
+          placeholder="제목을 입력해주세요."
+        />
+      </Header>
       <Section>
         <WriteArea
           value={state}
