@@ -56,10 +56,11 @@ export const Footer = styled.footer`
   height: 4rem;
 
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
-export const SaveButton = styled.button`
+export const Button = styled.button`
   width: 10rem;
   height: 3rem;
 
