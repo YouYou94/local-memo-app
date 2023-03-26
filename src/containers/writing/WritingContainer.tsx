@@ -3,12 +3,12 @@ import { Preview, Template, Write } from '../../components';
 
 const ROW = 'row';
 
-const WriteContainer = () => {
+const WriteContainer = ({ setTap }: any) => {
   const [memo, setMemo] = useState<string>('');
 
   return (
     <Template direction={ROW}>
-      <Write state={memo} setState={setMemo} />
+      <Write state={memo} setState={setMemo} setTap={setTap} />
       <Preview state={memo} />
     </Template>
   );

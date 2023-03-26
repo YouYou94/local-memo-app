@@ -6,15 +6,16 @@ import {
   Section,
   WriteArea,
   Footer,
-  SaveButton,
+  Button,
 } from './WriteStyled';
 
 type WriteProps = {
   state: string;
   setState: any;
+  setTap: any;
 };
 
-export const Write = ({ state, setState }: WriteProps) => {
+export const Write = ({ state, setState, setTap }: WriteProps) => {
   const [title, setTitle] = useState<string>('');
 
   const handleChangeTitleInput = (
@@ -33,6 +34,8 @@ export const Write = ({ state, setState }: WriteProps) => {
     setState(value);
   };
 
+  const handleOnClickSaveButton = () => {};
+
   return (
     <Box>
       <Header>
@@ -50,7 +53,8 @@ export const Write = ({ state, setState }: WriteProps) => {
         />
       </Section>
       <Footer>
-        <SaveButton>저장하기</SaveButton>
+        <Button onClick={handleOnClickSaveButton}>저장하기</Button>
+        <Button onClick={() => setTap(0)}>취소하기</Button>
       </Footer>
     </Box>
   );

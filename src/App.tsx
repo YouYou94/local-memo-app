@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Menu setTap={setTap} />
         {tap === 0 ? <HomeContainer /> : <></>}
-        {tap === 1 ? <WritingContainer /> : <></>}
+        {tap === 1 ? <WritingContainer setTap={setTap} /> : <></>}
         {tap === 2 ? <ManageContainer /> : <></>}
       </div>
     </RecoilRoot>
