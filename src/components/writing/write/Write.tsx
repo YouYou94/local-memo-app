@@ -1,5 +1,13 @@
 import { useState } from 'react';
-import { Box, Header, TitleInput, Section, WriteArea } from './WriteStyled';
+import {
+  Box,
+  Header,
+  TitleInput,
+  Section,
+  WriteArea,
+  Footer,
+  SaveButton,
+} from './WriteStyled';
 
 type WriteProps = {
   state: string;
@@ -41,6 +49,9 @@ export const Write = ({ state, setState }: WriteProps) => {
           placeholder="메모를 작성해주세요...."
         />
       </Section>
+      <Footer>
+        <SaveButton>저장하기</SaveButton>
+      </Footer>
     </Box>
   );
 };
