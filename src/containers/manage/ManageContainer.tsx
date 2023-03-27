@@ -1,7 +1,11 @@
-import { Template } from '../../components';
+import { Manage, Template } from '../../components';
 
 const ManageContainer = () => {
-  return <Template>관리</Template>;
+  return (
+    <Template>
+      <Manage />
+    </Template>
+  );
 };
 
 export default ManageContainer;

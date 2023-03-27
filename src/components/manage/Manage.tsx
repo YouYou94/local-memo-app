@@ -1,14 +1,14 @@
-import { Box, List, Item } from './ManageStyled';
+import { Box, Item, List } from './ManageStyled';
 
-type ManageProps = {
-  user: any;
-};
+export const Manage = () => {
+  const memoState = JSON.parse(localStorage.getItem('manage') || '');
 
-export const Manage = ({ user }: ManageProps) => {
   return (
     <Box>
       <List>
-        <Item>Add</Item>
+        {memoState.map((memo: any, index: any) => {
+          return <Item></Item>;
+        })}
       </List>
     </Box>
   );
