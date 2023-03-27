@@ -34,7 +34,30 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
     setState(value);
   };
 
-  const handleOnClickSaveButton = () => {};
+  const handleOnClickSaveButton = () => {
+    // 유효성 검사
+    if (!title) {
+      alert('제목을 채워주세요!');
+      return;
+    }
+
+    if (!state) {
+      alert('메모 내용을 채워주세요!');
+      return;
+    }
+
+    const manageState = JSON.parse(localStorage.getItem('manage') || '');
+
+    manageState.push({
+      title,
+      memo: state,
+    });
+
+    localStorage.setItem('manage', JSON.stringify(manageState));
+
+    // 저장 완료 시 관리 화면으로 탭 변경
+    setTap(2);
+  };
 
   return (
     <Box>
