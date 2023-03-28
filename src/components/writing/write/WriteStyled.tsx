@@ -50,6 +50,8 @@ export const MemoColorBox = styled.div<{ select: boolean }>`
   justify-content: center;
   align-items: center;
 
+  border: 1px solid rgb(204, 204, 204);
+
   cursor: pointer;
 
   background-color: ${(prop) => (prop.select ? 'rgb(204, 204, 204, 0.5)' : '')};
