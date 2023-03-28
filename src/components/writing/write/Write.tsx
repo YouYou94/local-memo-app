@@ -110,7 +110,7 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
       <Nav>
         {ColorArray.map((colorData, index) => {
           const { id, color } = colorData;
-          console.log(id, color, id === color);
+
           return (
             <MemoColorBox
               key={index}
