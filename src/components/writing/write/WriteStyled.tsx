@@ -42,7 +42,7 @@ export const Nav = styled.nav`
   gap: 1rem;
 `;
 
-export const MemoColorBox = styled.div`
+export const MemoColorBox = styled.div<{ select: boolean }>`
   width: 1.5rem;
   height: 1.5rem;
 
@@ -51,6 +51,8 @@ export const MemoColorBox = styled.div`
   align-items: center;
 
   cursor: pointer;
+
+  background-color: ${(prop) => (prop.select ? 'rgb(204, 204, 204, 0.5)' : '')};
 
   :hover {
     background-color: rgb(204, 204, 204, 0.5);
