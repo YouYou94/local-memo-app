@@ -5,6 +5,9 @@ import {
   Box,
   Header,
   TitleInput,
+  Nav,
+  MemoColorBox,
+  MemoColor,
   Section,
   WriteArea,
   Footer,
@@ -17,9 +20,33 @@ type WriteProps = {
   setTap: any;
 };
 
+const ColorArray = [
+  {
+    id: 0,
+    color: 'rgb(255, 48, 48)',
+  },
+  {
+    id: 1,
+    color: 'rgb(255, 125, 5)',
+  },
+  {
+    id: 2,
+    color: 'rgb(255, 215, 0)',
+  },
+  {
+    id: 3,
+    color: 'rgb(0, 255, 15)',
+  },
+  {
+    id: 4,
+    color: 'rgb(0, 175, 255)',
+  },
+];
+
 export const Write = ({ state, setState, setTap }: WriteProps) => {
   const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
+  const [color, setColor] = useState<number>(0);
 
   const handleChangeTitleInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -72,6 +99,16 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
           placeholder="제목을 입력해주세요."
         />
       </Header>
+      <Nav>
+        {ColorArray.map((colorData) => {
+          const { id, color } = colorData;
+          return (
+            <MemoColorBox key={id}>
+              <MemoColor color={color} />
+            </MemoColorBox>
+          );
+        })}
+      </Nav>
       <Section>
         <WriteArea
           mode={mode}

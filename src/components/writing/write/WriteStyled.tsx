@@ -32,6 +32,40 @@ export const TitleInput = styled.input<{ mode: string }>`
   outline: none;
 `;
 
+export const Nav = styled.nav`
+  height: 2.5rem;
+
+  display: flex;
+
+  border-bottom: 1px solid rgb(204, 204, 204);
+
+  gap: 1rem;
+`;
+
+export const MemoColorBox = styled.div`
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  :hover {
+    background-color: rgb(204, 204, 204, 0.5);
+  }
+`;
+
+export const MemoColor = styled.div<{ color: string }>`
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: 50%;
+
+  background-color: ${(prop) => prop.color};
+`;
+
 export const Section = styled.section`
   flex: 1;
 
