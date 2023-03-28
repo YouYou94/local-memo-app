@@ -19,7 +19,7 @@ export const Header = styled.header`
   border-bottom: 1px solid rgb(204, 204, 204);
 `;
 
-export const TitleInput = styled.input`
+export const TitleInput = styled.input<{ mode: string }>`
   flex: 1;
 
   border: none;
@@ -27,6 +27,7 @@ export const TitleInput = styled.input`
   font-size: 1.7rem;
 
   background-color: transparent;
+  color: ${(prop) => (prop.mode === 'bright' ? 'black' : 'white')};
 
   outline: none;
 `;
@@ -37,7 +38,7 @@ export const Section = styled.section`
   display: flex;
 `;
 
-export const WriteArea = styled.textarea`
+export const WriteArea = styled.textarea<{ mode: string }>`
   flex: 1;
 
   border: none;
@@ -46,6 +47,7 @@ export const WriteArea = styled.textarea`
   font-size: 1.3rem;
 
   background-color: transparent;
+  color: ${(prop) => (prop.mode === 'bright' ? 'black' : 'white')};
 
   resize: none;
 
@@ -60,7 +62,7 @@ export const Footer = styled.footer`
   align-items: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ mode: string }>`
   width: 10rem;
   height: 3rem;
 
@@ -70,6 +72,7 @@ export const Button = styled.button`
   font-size: 1.2rem;
 
   background-color: transparent;
+  color: ${(prop) => (prop.mode === 'bright' ? 'black' : 'white')};
 
   outline: none;
 

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import { getModeState } from '../../../recoil/selector';
 import {
   Box,
   Header,
@@ -16,6 +18,7 @@ type WriteProps = {
 };
 
 export const Write = ({ state, setState, setTap }: WriteProps) => {
+  const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
 
   const handleChangeTitleInput = (
@@ -63,6 +66,7 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
     <Box>
       <Header>
         <TitleInput
+          mode={mode}
           value={title}
           onChange={handleChangeTitleInput}
           placeholder="제목을 입력해주세요."
@@ -70,14 +74,19 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
       </Header>
       <Section>
         <WriteArea
+          mode={mode}
           value={state}
           onChange={handleChangeWriteArea}
           placeholder="메모를 작성해주세요...."
         />
       </Section>
       <Footer>
-        <Button onClick={handleOnClickSaveButton}>저장하기</Button>
-        <Button onClick={() => setTap(0)}>취소하기</Button>
+        <Button mode={mode} onClick={handleOnClickSaveButton}>
+          저장하기
+        </Button>
+        <Button mode={mode} onClick={() => setTap(0)}>
+          취소하기
+        </Button>
       </Footer>
     </Box>
   );
