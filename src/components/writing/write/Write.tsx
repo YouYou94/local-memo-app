@@ -57,7 +57,7 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
   };
 
   const handleClickMemoColor = (event: React.MouseEvent<HTMLDivElement>) => {
-    console.log(event);
+    console.log(event.currentTarget.id);
   };
 
   const handleChangeWriteArea = (
