@@ -46,7 +46,7 @@ const ColorArray = [
 export const Write = ({ state, setState, setTap }: WriteProps) => {
   const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
-  const [color, setColor] = useState<string>('0');
+  const [colorState, setColorState] = useState<string>('0');
 
   const handleChangeTitleInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -59,7 +59,9 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
   const handleClickMemoColor = (event: React.MouseEvent<HTMLDivElement>) => {
     const { id } = event.currentTarget;
 
-    setColor(id);
+    console.log(id);
+
+    setColorState(id);
   };
 
   const handleChangeWriteArea = (
@@ -108,8 +110,14 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
       <Nav>
         {ColorArray.map((colorData, index) => {
           const { id, color } = colorData;
+          console.log(id, color, id === color);
           return (
-            <MemoColorBox key={index} id={id} onClick={handleClickMemoColor}>
+            <MemoColorBox
+              key={index}
+              id={id}
+              select={id === colorState ? true : false}
+              onClick={handleClickMemoColor}
+            >
               <MemoColor color={color} />
             </MemoColorBox>
           );
