@@ -22,23 +22,23 @@ type WriteProps = {
 
 const ColorArray = [
   {
-    id: 0,
+    id: '0',
     color: 'rgb(255, 48, 48)',
   },
   {
-    id: 1,
+    id: '1',
     color: 'rgb(255, 125, 5)',
   },
   {
-    id: 2,
+    id: '2',
     color: 'rgb(255, 215, 0)',
   },
   {
-    id: 3,
+    id: '3',
     color: 'rgb(0, 255, 15)',
   },
   {
-    id: 4,
+    id: '4',
     color: 'rgb(0, 175, 255)',
   },
 ];
@@ -54,6 +54,10 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
     const { value } = event.target;
 
     setTitle(value);
+  };
+
+  const handleClickMemoColor = (event: React.MouseEvent<HTMLDivElement>) => {
+    console.log(event);
   };
 
   const handleChangeWriteArea = (
@@ -100,10 +104,10 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
         />
       </Header>
       <Nav>
-        {ColorArray.map((colorData) => {
+        {ColorArray.map((colorData, index) => {
           const { id, color } = colorData;
           return (
-            <MemoColorBox key={id}>
+            <MemoColorBox key={index} id={id} onClick={handleClickMemoColor}>
               <MemoColor color={color} />
             </MemoColorBox>
           );
