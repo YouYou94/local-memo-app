@@ -46,7 +46,7 @@ const ColorArray = [
 export const Write = ({ state, setState, setTap }: WriteProps) => {
   const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
-  const [color, setColor] = useState<number>(0);
+  const [color, setColor] = useState<string>('0');
 
   const handleChangeTitleInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -57,7 +57,9 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
   };
 
   const handleClickMemoColor = (event: React.MouseEvent<HTMLDivElement>) => {
-    console.log(event.currentTarget.id);
+    const { id } = event.currentTarget;
+
+    setColor(id);
   };
 
   const handleChangeWriteArea = (
