@@ -23,23 +23,23 @@ type WriteProps = {
 const ColorArray = [
   {
     id: '0',
-    color: 'rgb(255, 48, 48)',
+    color: 'rgb(255, 113, 127)',
   },
   {
     id: '1',
-    color: 'rgb(255, 125, 5)',
+    color: 'rgb(255, 189, 91)',
   },
   {
     id: '2',
-    color: 'rgb(255, 215, 0)',
+    color: 'rgb(255, 240, 106)',
   },
   {
     id: '3',
-    color: 'rgb(0, 255, 15)',
+    color: 'rgb(111, 255, 121);',
   },
   {
     id: '4',
-    color: 'rgb(0, 175, 255)',
+    color: 'rgb(93, 204, 255)',
   },
 ];
 
