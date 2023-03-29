@@ -2,7 +2,7 @@ import { Manage, Template } from '../../components';
 
 const ManageContainer = () => {
   return (
-    <Template manage={'true'}>
+    <Template>
       <Manage />
     </Template>
   );
