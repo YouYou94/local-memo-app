@@ -1,9 +1,12 @@
 import { Manage, Template } from '../../components';
+import { Box } from './ManageContainerStyled';
 
 const ManageContainer = () => {
   return (
     <Template>
-      <Manage />
+      <Box>
+        <Manage />
+      </Box>
     </Template>
   );
 };
