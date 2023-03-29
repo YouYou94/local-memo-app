@@ -46,7 +46,10 @@ const ColorArray = [
 export const Write = ({ state, setState, setTap }: WriteProps) => {
   const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
-  const [colorState, setColorState] = useState<string>('0');
+  const [colorState, setColorState] = useState<any>({
+    select: '0',
+    rgb: 'rgb(255, 48, 48)',
+  });
 
   const handleChangeTitleInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -58,10 +61,9 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
 
   const handleClickMemoColor = (event: React.MouseEvent<HTMLDivElement>) => {
     const { id } = event.currentTarget;
+    const colorObj = JSON.parse(id);
 
-    console.log(id);
-
-    setColorState(id);
+    setColorState({ select: colorObj.id, rgb: colorObj.color });
   };
 
   const handleChangeWriteArea = (
@@ -88,6 +90,7 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
 
     manageState.push({
       title,
+      color: colorState.rgb,
       memo: state,
     });
 
@@ -110,12 +113,13 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
       <Nav>
         {ColorArray.map((colorData, index) => {
           const { id, color } = colorData;
+          const colorObj = { id, color };
 
           return (
             <MemoColorBox
               key={index}
-              id={id}
-              select={id === colorState ? true : false}
+              id={JSON.stringify(colorObj)}
+              select={id === colorState.select ? true : false}
               onClick={handleClickMemoColor}
             >
               <MemoColor color={color} />
