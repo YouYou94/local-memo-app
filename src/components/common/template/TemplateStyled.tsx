@@ -1,18 +1,9 @@
 import styled from 'styled-components';
 
-interface LayoutProps {
-  mode: string;
-  direction?: string;
-  manage?: string;
-}
-
-export const Layout = styled.div<LayoutProps>`
-  ${(prop) => (prop.manage ? '' : 'height: 100vh;')}
-
+export const Layout = styled.div<{ mode: string }>`
   flex: 1;
 
   display: flex;
-  flex-direction: ${(prop) => prop.direction};
 
   color: ${(prop) => (prop.mode === 'bright' ? 'black' : 'white')};
   background-color: ${(prop) =>

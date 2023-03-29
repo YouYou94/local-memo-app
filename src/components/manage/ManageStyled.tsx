@@ -5,7 +5,7 @@ export const Box = styled.div`
 
   display: flex;
 
-  margin: 2rem;
+  padding: 2rem;
 `;
 
 export const List = styled.ul`
@@ -26,10 +26,11 @@ export const Item = styled.li<{ color: string }>`
   display: flex;
   flex-direction: column;
 
-  border: 1px solid rgb(204, 204, 204);
+  border-radius: 0.5rem;
   padding: 1rem;
 
   background-color: ${(prop) => prop.color};
+  color: black;
 
   transition: all 0.5s;
 
