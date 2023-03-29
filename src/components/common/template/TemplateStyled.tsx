@@ -3,9 +3,12 @@ import styled from 'styled-components';
 interface LayoutProps {
   mode: string;
   direction?: string;
+  manage?: string;
 }
 
 export const Layout = styled.div<LayoutProps>`
+  ${(prop) => (prop.manage ? '' : 'height: 100vh;')}
+
   flex: 1;
 
   display: flex;

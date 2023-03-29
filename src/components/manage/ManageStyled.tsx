@@ -5,7 +5,7 @@ export const Box = styled.div`
 
   display: flex;
 
-  padding: 2rem;
+  margin: 2rem;
 `;
 
 export const List = styled.ul`
@@ -31,9 +31,15 @@ export const Item = styled.li<{ color: string }>`
 
   background-color: ${(prop) => prop.color};
 
+  transition: all 0.5s;
+
   cursor: pointer;
 
   gap: 1rem;
+
+  :hover {
+    transform: translate(0.3rem, -0.3rem);
+  }
 `;
 
 export const ItemTitle = styled.h2``;
