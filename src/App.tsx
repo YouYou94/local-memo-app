@@ -1,20 +1,24 @@
 import { RecoilRoot } from 'recoil';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu } from './components';
-import { HomeContainer, ManageContainer, WritingContainer } from './containers';
+import { ManageContainer, WritingContainer } from './containers';
 import './style/font.css';
 import './App.css';
 
 function App() {
-  const [tap, setTap] = useState<number>(0);
+  const [tap, setTap] = useState<number>(1);
+
+  useEffect(() => {
+    if (!localStorage.getItem('manage'))
+      localStorage.setItem('manage', JSON.stringify([]));
+  }, []);
 
   return (
     <RecoilRoot>
       <div className="App">
         <Menu setTap={setTap} />
-        {tap === 0 ? <HomeContainer /> : <></>}
-        {tap === 1 ? <WritingContainer setTap={setTap} /> : <></>}
-        {tap === 2 ? <ManageContainer /> : <></>}
+        {tap === 0 ? <WritingContainer setTap={setTap} /> : <></>}
+        {tap === 1 ? <ManageContainer /> : <></>}
       </div>
     </RecoilRoot>
   );
