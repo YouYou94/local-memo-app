@@ -2,7 +2,7 @@
 export { Template } from './common/template/Template';
 
 /* Components */
-export { Menu } from './menu/Menu';
+export { Menu } from './common/menu/Menu';
 export { Preview } from './writing/preview/Preview';
 export { Write } from './writing/write/Write';
 

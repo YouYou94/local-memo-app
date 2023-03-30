@@ -1,9 +1,9 @@
 import { useRecoilState } from 'recoil';
-import { modeState } from '../../recoil/atom';
+import { modeState } from '../../../recoil/atom';
 import { Box, DisplayButton, List, MenuIcon, MenuItem } from './MenuStyled';
-import DARKMODE from '../../assets/image/darkmode.png';
-import Add from '../../assets/image/add.png';
-import Manage from '../../assets/image/manage.png';
+import DARKMODE from '../../../assets/image/darkmode.png';
+import Add from '../../../assets/image/add.png';
+import Manage from '../../../assets/image/manage.png';
 
 export const Menu = ({ setTap }: any) => {
   const [mode, setMode] = useRecoilState<string>(modeState);
