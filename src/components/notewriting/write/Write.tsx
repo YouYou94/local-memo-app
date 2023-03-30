@@ -45,6 +45,7 @@ const ColorArray = [
 
 export const Write = ({ state, setState, setTap }: WriteProps) => {
   const mode = useRecoilValue(getModeState);
+  //const [chromeStorageState, setChromeStorageState] = useState<any>([]);
   const [title, setTitle] = useState<string>('');
   const [colorState, setColorState] = useState<any>({
     select: '0',
@@ -86,6 +87,7 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
       return;
     }
 
+    /* 개발자 로컬스토리지 */
     const manageState = JSON.parse(localStorage.getItem('manage') || '');
 
     manageState.push({
@@ -96,8 +98,25 @@ export const Write = ({ state, setState, setTap }: WriteProps) => {
 
     localStorage.setItem('manage', JSON.stringify(manageState));
 
-    // 저장 완료 시 관리 화면으로 탭 변경
     setTap(2);
+
+    /* 크롬 스토리지 */
+    /*
+    chrome.storage.sync.get(['manage'], function (items) {
+      setChromeStorageState(items);
+      setChromeStorageState([
+        ...chromeStorageState,
+        { title, color: colorState.rgb, memo: state },
+      ]);
+
+      chrome.storage.sync.set(
+        { manage: JSON.stringify(chromeStorageState) },
+        function () {
+          console.log('Value is set to ' + chromeStorageState);
+        },
+      );
+    });
+    */
   };
 
   return (
