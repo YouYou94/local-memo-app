@@ -1,2 +1,2 @@
-export { default as ManageContainer } from './manage/ManageContainer';
-export { default as WritingContainer } from './writing/WritingContainer';
+export { default as NoteManagerContainer } from './notemanager/NoteManagerContainer';
+export { default as NoteWritingContainer } from './notewriting/NoteWriteContainer';

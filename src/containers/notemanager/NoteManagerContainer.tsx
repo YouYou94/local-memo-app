@@ -1,7 +1,7 @@
 import { Manage, Template } from '../../components';
-import { Box } from './ManageContainerStyled';
+import { Box } from './NoteManagerContainerStyled';
 
-const ManageContainer = () => {
+const NoteManagerContainer = () => {
   return (
     <Template>
       <Box>
@@ -11,4 +11,4 @@ const ManageContainer = () => {
   );
 };
 
-export default ManageContainer;
+export default NoteManagerContainer;

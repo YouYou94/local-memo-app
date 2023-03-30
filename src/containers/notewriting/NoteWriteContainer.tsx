@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Preview, Template, Write } from '../../components';
 
-const WriteContainer = ({ setTap }: any) => {
+const NoteWritingContainer = ({ setTap }: any) => {
   const [memo, setMemo] = useState<string>('');
 
   return (
@@ -12,4 +12,4 @@ const WriteContainer = ({ setTap }: any) => {
   );
 };
 
-export default WriteContainer;
+export default NoteWritingContainer;
