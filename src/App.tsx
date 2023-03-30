@@ -17,9 +17,7 @@ function App() {
   /*
   useEffect(() => {
     chrome.storage.sync.get(['manage'], function (items) {
-      console.log(items.manage);
       if (!items.manage) {
-        console.log('이게 실행되어야함!');
         chrome.storage.sync.set({ manage: JSON.stringify([]) }, function () {
           console.log('Value is set to ' + JSON.stringify([]));
         });
