@@ -1,7 +1,11 @@
 import { RecoilRoot } from 'recoil';
 import { useEffect, useState } from 'react';
 import { Menu } from './components';
-import { NoteManagerContainer, NoteWritingContainer } from './containers';
+import {
+  NoteManagerContainer,
+  NoteWritingContainer,
+  WidgetMainContainer,
+} from './containers';
 import './style/font.css';
 import './App.css';
 
@@ -30,7 +34,7 @@ function App() {
     <RecoilRoot>
       <div className="App">
         <Menu setTap={setTap} />
-        {tap === 0 ? <></> : <></>}
+        {tap === 0 ? <WidgetMainContainer /> : <></>}
         {tap === 1 ? <NoteWritingContainer setTap={setTap} /> : <></>}
         {tap === 2 ? <NoteManagerContainer /> : <></>}
       </div>
