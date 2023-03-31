@@ -6,7 +6,7 @@ import './style/font.css';
 import './App.css';
 
 function App() {
-  const [tap, setTap] = useState<number>(0);
+  const [tap, setTap] = useState<number>(1);
 
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem('manage') || ''))
@@ -30,8 +30,9 @@ function App() {
     <RecoilRoot>
       <div className="App">
         <Menu setTap={setTap} />
-        {tap === 0 ? <NoteWritingContainer setTap={setTap} /> : <></>}
-        {tap === 1 ? <NoteManagerContainer /> : <></>}
+        {tap === 0 ? <></> : <></>}
+        {tap === 1 ? <NoteWritingContainer setTap={setTap} /> : <></>}
+        {tap === 2 ? <NoteManagerContainer /> : <></>}
       </div>
     </RecoilRoot>
   );
