@@ -1,5 +1,9 @@
-import { Box } from './FeatStyled';
+import { Box, Title } from './FeatStyled';
 
 export const Feat = () => {
-  return <Box></Box>;
+  return (
+    <Box>
+      <Title>MLPW</Title>
+    </Box>
+  );
 };
