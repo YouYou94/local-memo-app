@@ -10,3 +10,25 @@ export const Box = styled.section`
 `;
 
 export const Title = styled.h1``;
+
+export const TimeBox = styled.div`
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Orbitron';
+  font-size: 4rem;
+
+  text-align: center;
+
+  user-select: none;
+`;
+
+export const TimeSpan = styled.span`
+  width: 8rem;
+`;
+
+export const ColonSpan = styled.span``;
