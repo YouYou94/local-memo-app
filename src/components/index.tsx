@@ -1,7 +1,6 @@
 /* Common */
 export { Template } from './common/template/Template';
 export { Menu } from './common/menu/Menu';
-export { Clock } from './common/clock/Clock';
 
 /* Components */
 /* Writing */
