@@ -1,22 +1,8 @@
 import { RecoilRoot } from 'recoil';
-import { useEffect, useState } from 'react';
-import { Menu } from './components';
-import {
-  NoteManagerContainer,
-  NoteWritingContainer,
-  WidgetMainContainer,
-} from './containers';
 import './style/font.css';
 import './App.css';
 
 function App() {
-  const [tap, setTap] = useState<number>(1);
-
-  useEffect(() => {
-    if (!JSON.parse(localStorage.getItem('manage') || ''))
-      localStorage.setItem('manage', JSON.stringify([]));
-  }, []);
-
   /* 크롬 스토리지 */
   /*
   useEffect(() => {
@@ -32,12 +18,7 @@ function App() {
 
   return (
     <RecoilRoot>
-      <div className="App">
-        <Menu setTap={setTap} />
-        {tap === 0 ? <WidgetMainContainer /> : <></>}
-        {tap === 1 ? <NoteWritingContainer setTap={setTap} /> : <></>}
-        {tap === 2 ? <NoteManagerContainer /> : <></>}
-      </div>
+      <div className="App"></div>
     </RecoilRoot>
   );
 }
