@@ -2,3 +2,8 @@
   font-family: 'Orbitron';
   src: url('./font/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Alkatra';
+  src: url('./font/Alkatra-Regular.ttf') format('truetype');
+}
