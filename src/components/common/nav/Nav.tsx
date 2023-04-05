@@ -11,14 +11,18 @@ import {
   MenuName,
 } from './NavStyled';
 
-export const Nav = () => {
+export const Nav = ({ setTap }: any) => {
+  const handleOnClickHome = () => setTap(0);
+
+  const handleOnClickFeedWrite = () => setTap(1);
+
   return (
     <Box>
       <TitleBox>
         <Title>MLPDFeed</Title>
       </TitleBox>
       <MenuList>
-        <MenuItem>
+        <MenuItem onClick={handleOnClickHome}>
           <MenuIcon icon={HOME} />
           <MenuName>홈</MenuName>
         </MenuItem>
@@ -26,7 +30,7 @@ export const Nav = () => {
           <MenuIcon icon={DARKMODE} />
           <MenuName>화면 대비</MenuName>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleOnClickFeedWrite}>
           <MenuIcon icon={WRITE} />
           <MenuName>일기 피드 작성</MenuName>
         </MenuItem>
