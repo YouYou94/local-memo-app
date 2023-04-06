@@ -31,12 +31,15 @@ export const TagBox = styled.div`
 
   display: flex;
   align-items: center;
+
+  gap: 0.5rem;
 `;
 
 export const TagInput = styled.input`
   flex: 1;
 
   border: none;
+  padding-left: 0.5rem;
 
   outline: none;
 `;
@@ -47,9 +50,11 @@ export const Tag = styled.div`
   display: flex;
   align-items: center;
 
-  border-radius: 1.5rem;
-  padding: 0 1rem;
+  border-radius: 1rem;
+  padding: 0 1.5rem;
 
   background-color: rgb(100, 75, 200, 0.7);
   color: white;
+
+  font-size: 0.8rem;
 `;
