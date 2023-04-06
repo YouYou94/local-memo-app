@@ -35,6 +35,14 @@ export const Write = () => {
     }
   };
 
+  const handleOnClickTag = (event: React.MouseEvent<HTMLDivElement>) => {
+    const { id } = event.currentTarget;
+
+    setTagList(
+      tagList.filter((tag: string, index: number) => index !== Number(id)),
+    );
+  };
+
   return (
     <Box>
       <WriteBox>
@@ -42,7 +50,11 @@ export const Write = () => {
           <UploaderBox></UploaderBox>
           <TagBox>
             {tagList?.map((tag: string, index: number): any => {
-              return <Tag key={index}>{tag}</Tag>;
+              return (
+                <Tag key={index} id={String(index)} onClick={handleOnClickTag}>
+                  {tag}
+                </Tag>
+              );
             })}
             <TagInput
               value={tagValue}
