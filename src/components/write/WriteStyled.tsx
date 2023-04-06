@@ -57,4 +57,6 @@ export const Tag = styled.div`
   color: white;
 
   font-size: 0.8rem;
+
+  cursor: pointer;
 `;
