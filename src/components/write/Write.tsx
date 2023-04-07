@@ -37,6 +37,12 @@ export const Write = () => {
     setUploaderFile(files);
   };
 
+  const handleOnClickImageRemove = () => {
+    URL.revokeObjectURL(uploaderFileURL);
+    setUploaderFileURL(''); // 렌더링 이미지 초기화
+    setUploaderFile(null);
+  };
+
   const handleOnChangeTagInput = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
@@ -81,7 +87,11 @@ export const Write = () => {
         <WriteHeader>
           <UploaderBox>
             {uploaderFileURL ? (
-              <UploaderImage src={uploaderFileURL} alt="" />
+              <UploaderImage
+                src={uploaderFileURL}
+                onClick={handleOnClickImageRemove}
+                alt=""
+              />
             ) : (
               <UploaderButton
                 type="file"
