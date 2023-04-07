@@ -8,11 +8,15 @@ import {
   TagBox,
   Tag,
   TagInput,
+  WriteArticle,
+  WriteArea,
 } from './WriteStyled';
 
 export const Write = () => {
   const [tagValue, setTagValue] = useState<string>('');
   const [tagList, setTagList] = useState<any>([]);
+
+  const [contentValue, setContentValue] = useState<string>('');
 
   const handleOnChangeTagInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -44,6 +48,14 @@ export const Write = () => {
     );
   };
 
+  const handleOnChangeWriteArea = (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    const { value } = event.target;
+
+    setContentValue(value);
+  };
+
   return (
     <Box>
       <WriteBox>
@@ -67,6 +79,13 @@ export const Write = () => {
             />
           </TagBox>
         </WriteHeader>
+        <WriteArticle>
+          <WriteArea
+            value={contentValue}
+            onChange={handleOnChangeWriteArea}
+            placeholder="오늘의 다이어리를 작성해보세요."
+          />
+        </WriteArticle>
       </WriteBox>
     </Box>
   );
