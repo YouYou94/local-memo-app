@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import {
   Box,
   WriteBox,
+  WriteNav,
+  NavButton,
   WriteHeader,
   UploaderBox,
   UploaderButton,
@@ -13,7 +15,7 @@ import {
   WriteArea,
 } from './WriteStyled';
 
-export const Write = () => {
+export const Write = ({ setTap }: any) => {
   const [uploaderFileURL, setUploaderFileURL] = useState<string>('');
   const [uploaderFile, setUploaderFile] = useState<FileList | null>(null);
 
@@ -84,6 +86,10 @@ export const Write = () => {
   return (
     <Box>
       <WriteBox>
+        <WriteNav>
+          <NavButton onClick={() => setTap(0)}>돌아가기</NavButton>
+          <NavButton onClick={() => setTap(0)}>등록하기</NavButton>
+        </WriteNav>
         <WriteHeader>
           <UploaderBox>
             {uploaderFileURL ? (
