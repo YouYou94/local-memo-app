@@ -5,6 +5,7 @@ import {
   WriteHeader,
   UploaderBox,
   UploaderButton,
+  UploaderImage,
   TagBox,
   Tag,
   TagInput,
@@ -13,10 +14,28 @@ import {
 } from './WriteStyled';
 
 export const Write = () => {
+  const [uploaderFileURL, setUploaderFileURL] = useState<string>('');
+  const [uploaderFile, setUploaderFile] = useState<FileList | null>(null);
+
   const [tagValue, setTagValue] = useState<string>('');
   const [tagList, setTagList] = useState<any>([]);
 
   const [contentValue, setContentValue] = useState<string>('');
+
+  const handleOnChangeUploaderFile = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const { files } = event.target;
+
+    if (!files) {
+      return;
+    }
+
+    const newFileURL = URL.createObjectURL(files[0]);
+
+    setUploaderFileURL(newFileURL);
+    setUploaderFile(files);
+  };
 
   const handleOnChangeTagInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -61,7 +80,15 @@ export const Write = () => {
       <WriteBox>
         <WriteHeader>
           <UploaderBox>
-            <UploaderButton>사진 올리기</UploaderButton>
+            {uploaderFileURL ? (
+              <UploaderImage src={uploaderFileURL} alt="" />
+            ) : (
+              <UploaderButton
+                type="file"
+                accept="image/jpg, image/png, image/jpeg"
+                onChange={handleOnChangeUploaderFile}
+              />
+            )}
           </UploaderBox>
           <TagBox>
             {tagList?.map((tag: string, index: number): any => {
