@@ -6,7 +6,7 @@ export const Box = styled.div`
   display: flex;
   justify-content: center;
 
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 `;
 
 export const WriteBox = styled.div`
@@ -14,6 +14,26 @@ export const WriteBox = styled.div`
 
   display: flex;
   flex-direction: column;
+`;
+
+export const WriteNav = styled.nav`
+  height: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const NavButton = styled.button`
+  border: none;
+
+  background-color: transparent;
+
+  font-size: 1rem;
+
+  :hover {
+    color: rgb(0, 95, 255);
+  }
 `;
 
 export const WriteHeader = styled.header`
@@ -38,6 +58,8 @@ export const UploaderButton = styled.input``;
 export const UploaderImage = styled.img`
   width: auto;
   height: 5rem;
+
+  cursor: pointer;
 `;
 
 export const TagBox = styled.div`
