@@ -10,7 +10,7 @@ export const Box = styled.div`
 `;
 
 export const WriteBox = styled.div`
-  width: 30rem;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -69,4 +69,25 @@ export const Tag = styled.div`
   font-size: 0.8rem;
 
   cursor: pointer;
+`;
+
+export const WriteArticle = styled.article`
+  flex: 1;
+
+  display: flex;
+`;
+
+export const WriteArea = styled.textarea`
+  flex: 1;
+
+  border: none;
+  border-bottom: 1px solid rgb(204, 204, 204);
+
+  font-size: 1.3rem;
+
+  background-color: transparent;
+
+  resize: none;
+
+  outline: none;
 `;
