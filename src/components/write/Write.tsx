@@ -4,6 +4,7 @@ import {
   WriteBox,
   WriteHeader,
   UploaderBox,
+  UploaderButton,
   TagBox,
   Tag,
   TagInput,
@@ -47,7 +48,9 @@ export const Write = () => {
     <Box>
       <WriteBox>
         <WriteHeader>
-          <UploaderBox></UploaderBox>
+          <UploaderBox>
+            <UploaderButton>사진 올리기</UploaderButton>
+          </UploaderBox>
           <TagBox>
             {tagList?.map((tag: string, index: number): any => {
               return (
