@@ -14,6 +14,7 @@ import {
   WriteArticle,
   WriteArea,
 } from './WriteStyled';
+import axios from 'axios';
 
 export const Write = ({ setTap }: any) => {
   const [uploaderFileURL, setUploaderFileURL] = useState<string>('');
@@ -23,6 +24,25 @@ export const Write = ({ setTap }: any) => {
   const [tagList, setTagList] = useState<any>([]);
 
   const [contentValue, setContentValue] = useState<string>('');
+
+  const handleOnClickEnrolButton = async () => {
+    const formData = new FormData();
+
+    if (uploaderFile) {
+      formData.append('uploaderFile', uploaderFile[0]);
+
+      try {
+        await axios.post('/api/upload', formData, {
+          headers: { 'content-type': 'multipart/form-data' },
+        });
+      } catch (error: any) {
+        console.log('이미지업로드 에러 발생');
+        throw new Error(error);
+      }
+    } else alert('업로드할 이미지가 없습니다');
+
+    setTap(0);
+  };
 
   const handleOnChangeUploaderFile = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -87,7 +107,7 @@ export const Write = ({ setTap }: any) => {
     <Box>
       <WriteBox>
         <WriteNav>
-          <NavButton onClick={() => setTap(0)}>돌아가기</NavButton>
+          <NavButton onClick={handleOnClickEnrolButton}>돌아가기</NavButton>
           <NavButton onClick={() => setTap(0)}>등록하기</NavButton>
         </WriteNav>
         <WriteHeader>
