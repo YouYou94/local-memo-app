@@ -4,12 +4,13 @@ export const Box = styled.div`
   flex: 1;
 
   display: flex;
+  justify-content: center;
 
   padding: 2rem;
 `;
 
 export const WriteBox = styled.div`
-  flex: 1;
+  width: 30rem;
 
   display: flex;
   flex-direction: column;
@@ -23,14 +24,23 @@ export const WriteHeader = styled.header`
 `;
 
 export const UploaderBox = styled.div`
-  flex: 1;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgb(205, 205, 205);
 `;
+
+export const UploaderButton = styled.button``;
 
 export const TagBox = styled.div`
   height: 3rem;
 
   display: flex;
   align-items: center;
+
+  border-bottom: 1px solid rgb(205, 205, 205);
 
   gap: 0.5rem;
 `;
