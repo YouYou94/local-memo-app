@@ -17,22 +17,28 @@ export const WriteBox = styled.div`
 `;
 
 export const WriteHeader = styled.header`
-  height: 8rem;
+  height: 10rem;
 
   display: flex;
   flex-direction: column;
 `;
 
 export const UploaderBox = styled.div`
-  height: 3rem;
+  height: 7rem;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
   border-bottom: 1px solid rgb(205, 205, 205);
+  padding-bottom: 1rem;
 `;
 
-export const UploaderButton = styled.button``;
+export const UploaderButton = styled.input``;
+
+export const UploaderImage = styled.img`
+  width: auto;
+  height: 5rem;
+`;
 
 export const TagBox = styled.div`
   height: 3rem;
@@ -82,6 +88,7 @@ export const WriteArea = styled.textarea`
 
   border: none;
   border-bottom: 1px solid rgb(204, 204, 204);
+  padding: 1rem 0.2rem;
 
   font-size: 1.3rem;
 
