@@ -14,8 +14,11 @@ import {
 } from './FeedStyled';
 
 export const Feed = () => {
+  const feedList = null;
+
   return (
     <Box>
+      {feedList ? <></> : <>존재하는 피드가 없습니다.</>}
       <FeedBox>
         <FeedHeader>
           <UserBox>
