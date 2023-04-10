@@ -25,21 +25,35 @@ export const Write = ({ setTap }: any) => {
 
   const [contentValue, setContentValue] = useState<string>('');
 
+  /*
+    다음에 할일
+
+    피드 저장 후 해당 피드들을 조회하기
+
+    C 구현 완료
+    R 구현 준비중...
+  */
+
   const handleOnClickEnrolButton = async () => {
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    if (uploaderFile) {
-      formData.append('uploaderFile', uploaderFile[0]);
+    // if (uploaderFile) {
+    //   formData.append('uploaderFile', uploaderFile[0]);
 
-      try {
-        await axios.post('/api/upload', formData, {
-          headers: { 'content-type': 'multipart/form-data' },
-        });
-      } catch (error: any) {
-        console.log('이미지업로드 에러 발생');
-        throw new Error(error);
-      }
-    } else alert('업로드할 이미지가 없습니다');
+    //   try {
+    //     await axios.post('/api/upload', formData, {
+    //       headers: { 'content-type': 'multipart/form-data' },
+    //     });
+    //   } catch (error: any) {
+    //     console.log('이미지업로드 에러 발생');
+    //     throw new Error(error);
+    //   }
+    // } else alert('업로드할 이미지가 없습니다');
+
+    console.log('ㅎㅇㅎㅇ');
+    console.log(uploaderFileURL);
+    // 이 부분 Feed로 빼면 될 듯
+    localStorage.setItem('image', uploaderFileURL);
 
     setTap(0);
   };
@@ -107,8 +121,8 @@ export const Write = ({ setTap }: any) => {
     <Box>
       <WriteBox>
         <WriteNav>
-          <NavButton onClick={handleOnClickEnrolButton}>돌아가기</NavButton>
-          <NavButton onClick={() => setTap(0)}>등록하기</NavButton>
+          <NavButton onClick={() => setTap(0)}>돌아가기</NavButton>
+          <NavButton onClick={handleOnClickEnrolButton}>등록하기</NavButton>
         </WriteNav>
         <WriteHeader>
           <UploaderBox>
