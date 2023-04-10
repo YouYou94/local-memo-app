@@ -107,12 +107,19 @@ export const FeedArticle = styled.article`
   align-items: center;
 `;
 
-export const FeedImage = styled.div<{ image?: any }>`
-  flex: 1;
+// export const FeedImage = styled.div<{ image?: any }>`
+//   flex: 1;
 
-  background-image: url(${(prop) => prop.image});
-  background-repeat: no-repeat;
-  background-size: cover;
+//   background-image: url(${(prop) => prop.image});
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// `;
+
+export const FeedImage = styled.img`
+  width: auto;
+  height: 30rem;
+
+  cursor: pointer;
 `;
 
 export const FeedFooter = styled.footer`
