@@ -43,25 +43,6 @@ export const WriteHeader = styled.header`
   flex-direction: column;
 `;
 
-export const UploaderBox = styled.div`
-  height: 7rem;
-
-  display: flex;
-  align-items: flex-end;
-
-  border-bottom: 1px solid rgb(205, 205, 205);
-  padding-bottom: 1rem;
-`;
-
-export const UploaderButton = styled.input``;
-
-export const UploaderImage = styled.img`
-  width: auto;
-  height: 5rem;
-
-  cursor: pointer;
-`;
-
 export const TagBox = styled.div`
   height: 3rem;
 
