@@ -5,79 +5,18 @@ import {
   WriteNav,
   NavButton,
   WriteHeader,
-  UploaderBox,
-  UploaderButton,
-  UploaderImage,
   TagBox,
   Tag,
   TagInput,
   WriteArticle,
   WriteArea,
 } from './WriteStyled';
-import axios from 'axios';
 
 export const Write = ({ setTap }: any) => {
-  const [uploaderFileURL, setUploaderFileURL] = useState<string>('');
-  const [uploaderFile, setUploaderFile] = useState<FileList | null>(null);
-
   const [tagValue, setTagValue] = useState<string>('');
   const [tagList, setTagList] = useState<any>([]);
 
   const [contentValue, setContentValue] = useState<string>('');
-
-  /*
-    다음에 할일
-
-    피드 저장 후 해당 피드들을 조회하기
-
-    C 구현 완료
-    R 구현 준비중...
-  */
-
-  const handleOnClickEnrolButton = async () => {
-    // const formData = new FormData();
-
-    // if (uploaderFile) {
-    //   formData.append('uploaderFile', uploaderFile[0]);
-
-    //   try {
-    //     await axios.post('/api/upload', formData, {
-    //       headers: { 'content-type': 'multipart/form-data' },
-    //     });
-    //   } catch (error: any) {
-    //     console.log('이미지업로드 에러 발생');
-    //     throw new Error(error);
-    //   }
-    // } else alert('업로드할 이미지가 없습니다');
-
-    console.log('ㅎㅇㅎㅇ');
-    console.log(uploaderFileURL);
-    // 이 부분 Feed로 빼면 될 듯
-    localStorage.setItem('image', uploaderFileURL);
-
-    setTap(0);
-  };
-
-  const handleOnChangeUploaderFile = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    const { files } = event.target;
-
-    if (!files) {
-      return;
-    }
-
-    const newFileURL = URL.createObjectURL(files[0]);
-
-    setUploaderFileURL(newFileURL);
-    setUploaderFile(files);
-  };
-
-  const handleOnClickImageRemove = () => {
-    URL.revokeObjectURL(uploaderFileURL);
-    setUploaderFileURL(''); // 렌더링 이미지 초기화
-    setUploaderFile(null);
-  };
 
   const handleOnChangeTagInput = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -122,24 +61,9 @@ export const Write = ({ setTap }: any) => {
       <WriteBox>
         <WriteNav>
           <NavButton onClick={() => setTap(0)}>돌아가기</NavButton>
-          <NavButton onClick={handleOnClickEnrolButton}>등록하기</NavButton>
+          <NavButton onClick={() => setTap(0)}>등록하기</NavButton>
         </WriteNav>
         <WriteHeader>
-          <UploaderBox>
-            {uploaderFileURL ? (
-              <UploaderImage
-                src={uploaderFileURL}
-                onClick={handleOnClickImageRemove}
-                alt=""
-              />
-            ) : (
-              <UploaderButton
-                type="file"
-                accept="image/jpg, image/png, image/jpeg"
-                onChange={handleOnChangeUploaderFile}
-              />
-            )}
-          </UploaderBox>
           <TagBox>
             {tagList?.map((tag: string, index: number): any => {
               return (
