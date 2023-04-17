@@ -1,7 +1,5 @@
 /* Common */
 export { Template } from './common/template/Template';
-export { Nav } from './common/nav/Nav';
+export { TopBar } from './common/TopBar/TopBar';
 
 /* Components */
-export { Feed } from './feed/Feed';
-export { Write } from './write/Write';
