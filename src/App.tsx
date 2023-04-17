@@ -1,4 +1,5 @@
 import { RecoilRoot } from 'recoil';
+import { TopBar } from './components';
 import MainContainer from './containers/MainContainer';
 import './style/font.css';
 import './App.css';
@@ -11,6 +12,7 @@ function App() {
   return (
     <RecoilRoot>
       <div className="App">
+        <TopBar />
         <MainContainer />
       </div>
     </RecoilRoot>
