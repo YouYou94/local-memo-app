@@ -14,9 +14,9 @@ import {
 export const TopBar = ({ setTap }: any) => {
   const handleOnClickHome = () => setTap(0);
 
-  const handleOnClickAdd = () => setTap(0);
+  const handleOnClickAdd = () => setTap(1);
 
-  const handleOnClickEdit = () => setTap(0);
+  const handleOnClickEdit = () => setTap(2);
 
   return (
     <Layout>
