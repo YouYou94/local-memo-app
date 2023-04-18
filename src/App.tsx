@@ -1,5 +1,5 @@
 import { RecoilRoot } from 'recoil';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TopBar } from './components';
 import { EditContainer, HomeContainer, WriteContainer } from './containers';
 import './style/font.css';
@@ -11,6 +11,12 @@ function App() {
   /* MLPDFeed */
   const [tap, setTap] = useState<number>(0);
 
+  useEffect(() => {
+    const feed = localStorage.getItem('feed');
+
+    if (!feed) localStorage.setItem('feed', JSON.stringify([]));
+  }, []);
+
   return (
     <RecoilRoot>
       <div className="App">
@@ -18,7 +24,7 @@ function App() {
         {/* Home */}
         {tap === 0 ? <HomeContainer /> : <></>}
         {/* Write */}
-        {tap === 1 ? <WriteContainer /> : <></>}
+        {tap === 1 ? <WriteContainer setTap={setTap} /> : <></>}
         {/* Edit */}
         {tap === 2 ? <EditContainer /> : <></>}
       </div>
