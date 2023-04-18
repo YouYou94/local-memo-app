@@ -1,7 +1,7 @@
 import { RecoilRoot } from 'recoil';
 import { useState } from 'react';
 import { TopBar } from './components';
-import MainContainer from './containers/MainContainer';
+import { EditContainer, HomeContainer, WriteContainer } from './containers';
 import './style/font.css';
 import './App.css';
 
@@ -15,7 +15,12 @@ function App() {
     <RecoilRoot>
       <div className="App">
         <TopBar setTap={setTap} />
-        <MainContainer tap={tap} />
+        {/* Home */}
+        {tap === 0 ? <HomeContainer /> : <></>}
+        {/* Write */}
+        {tap === 1 ? <WriteContainer /> : <></>}
+        {/* Edit */}
+        {tap === 2 ? <EditContainer /> : <></>}
       </div>
     </RecoilRoot>
   );
