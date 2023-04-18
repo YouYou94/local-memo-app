@@ -11,20 +11,26 @@ import {
   MenuIcon,
 } from './TopBarStyled';
 
-export const TopBar = () => {
+export const TopBar = ({ setTap }: any) => {
+  const handleOnClickHome = () => setTap(0);
+
+  const handleOnClickAdd = () => setTap(0);
+
+  const handleOnClickEdit = () => setTap(0);
+
   return (
     <Layout>
       <TitleBox>
         <Title>MLDPFEED</Title>
       </TitleBox>
       <MenuBox>
-        <MenuItem title="홈으로돌아가기">
+        <MenuItem title="홈으로돌아가기" onClick={handleOnClickHome}>
           <MenuIcon icon={HOME} />
         </MenuItem>
-        <MenuItem title="다이어리추가하기">
+        <MenuItem title="다이어리추가하기" onClick={handleOnClickAdd}>
           <MenuIcon icon={NOTEADD} />
         </MenuItem>
-        <MenuItem title="다이어리수정하기">
+        <MenuItem title="다이어리수정하기" onClick={handleOnClickEdit}>
           <MenuIcon icon={NOTEEDIT} />
         </MenuItem>
       </MenuBox>
