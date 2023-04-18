@@ -1,6 +1,6 @@
 import { Template } from '../components';
 
-const MainContainer = () => {
+const MainContainer = ({ tap }: any) => {
   return <Template>ㅎㅇ</Template>;
 };
 
