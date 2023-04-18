@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.header`
   position: fixed;
   width: 100%;
-  height: 5rem;
+  height: 3rem;
 
   display: flex;
   justify-content: space-between;
@@ -44,8 +44,8 @@ export const Title = styled.h1`
 `;
 
 export const MenuItem = styled.li`
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
   display: flex;
   justify-content: center;
@@ -61,8 +61,8 @@ export const MenuItem = styled.li`
 `;
 
 export const MenuIcon = styled.div<{ icon?: any }>`
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
 
   background-image: url(${(prop) => prop.icon});
   background-repeat: no-repeat;
