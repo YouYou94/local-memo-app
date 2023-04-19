@@ -65,13 +65,14 @@ export const Article = styled.article`
   flex: 1;
 
   display: flex;
+
+  border-bottom: 1px solid rgb(204, 204, 204);
 `;
 
 export const WriteArea = styled.textarea`
   flex: 1;
 
   border: none;
-  border-bottom: 1px solid rgb(204, 204, 204);
   padding: 1rem 0.2rem;
 
   font-size: 1.3rem;
@@ -83,7 +84,7 @@ export const WriteArea = styled.textarea`
   outline: none;
 `;
 
-export const Nav = styled.nav`
+export const Footer = styled.footer`
   height: 4rem;
 
   display: flex;
