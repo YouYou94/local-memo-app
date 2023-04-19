@@ -16,6 +16,33 @@ export const CoverBox = styled.div`
   flex-direction: column;
 `;
 
+export const Article = styled.article`
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 1px solid rgb(204, 204, 204);
+`;
+
+export const PreviewBox = styled.div`
+  flex: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Preview = styled.div`
+  width: 48rem;
+
+  aspect-ratio: 16 / 9;
+`;
+
+export const SettingBox = styled.div`
+  flex: 1;
+`;
+
 export const Footer = styled.footer`
   height: 4rem;
 
