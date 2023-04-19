@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import {
   Box,
   WriteBox,
-  Nav,
-  Button,
   Header,
   TagBox,
   Tag,
   TagInput,
   Article,
   WriteArea,
+  Footer,
+  Button,
 } from './WriteStyled';
 
-export const Write = ({ setTap }: any) => {
+export const Write = ({ writeState, setTap, setStep }: any) => {
   const [tagValue, setTagValue] = useState<string>('');
   const [tagList, setTagList] = useState<any>([]);
 
@@ -105,10 +105,10 @@ export const Write = ({ setTap }: any) => {
             placeholder="오늘의 다이어리를 작성해보세요."
           />
         </Article>
-        <Nav>
-          <Button onClick={() => setTap(0)}>돌아가기</Button>
+        <Footer>
+          <Button onClick={() => setStep(0)}>돌아가기</Button>
           <Button onClick={handleOnClickEnrolDiary}>등록하기</Button>
-        </Nav>
+        </Footer>
       </WriteBox>
     </Box>
   );
