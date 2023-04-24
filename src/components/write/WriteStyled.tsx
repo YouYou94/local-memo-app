@@ -1,23 +1,8 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-
-  padding: 0 2rem;
-`;
-
-export const WriteBox = styled.div`
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-`;
-
+/* Header */
 export const Header = styled.header`
-  height: 3rem;
+  height: 6rem;
 
   display: flex;
   flex-direction: column;
@@ -61,6 +46,7 @@ export const Tag = styled.div`
   cursor: pointer;
 `;
 
+/* Article */
 export const Article = styled.article`
   flex: 1;
 
@@ -84,6 +70,7 @@ export const WriteArea = styled.textarea`
   outline: none;
 `;
 
+/* Footer */
 export const Footer = styled.footer`
   height: 4rem;
 
