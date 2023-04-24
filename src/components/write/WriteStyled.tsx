@@ -11,8 +11,32 @@ export const Header = styled.header`
   border-bottom: 1px solid rgb(205, 205, 205);
 `;
 
+export const ColorBox = styled.div`
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgb(205, 205, 205);
+  padding: 0 0.5rem;
+
+  gap: 1rem;
+`;
+
+export const Color = styled.div<{ color: string; select: boolean }>`
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 0.5rem;
+  ${(prop) => (prop.select ? 'border: 3px solid rgb(0, 0, 0, .4)' : '')};
+
+  background-color: ${(prop) => prop.color};
+
+  cursor: pointer;
+`;
+
 export const TagBox = styled.div`
-  height: 3rem;
+  flex: 1;
 
   display: flex;
   align-items: center;
@@ -38,7 +62,7 @@ export const Tag = styled.div`
   border-radius: 1rem;
   padding: 0 1rem;
 
-  background-color: rgb(100, 75, 200, 0.7);
+  background-color: rgb(105, 165, 255);
   color: white;
 
   font-size: 0.8rem;
