@@ -1,9 +1,40 @@
-import { Template, Write } from '../components';
+import { useState } from 'react';
+import {
+  Template,
+  WriteArticle,
+  WriteFooter,
+  WriteHeader,
+} from '../components';
 
-const WriteContainer = () => {
+const WriteContainer = ({ setTap }: any) => {
+  const [writeState, setWriteState] = useState<object>({
+    id: '',
+    tag: [],
+    content: '',
+    time: '',
+  });
+
+  const [tagValue, setTagValue] = useState<string>('');
+  const [tagList, setTagList] = useState<any>([]);
+  const [contentValue, setContentValue] = useState<string>('');
+
   return (
     <Template>
-      <Write />
+      <WriteHeader
+        tagValue={tagValue}
+        tagList={tagList}
+        setTagValue={setTagValue}
+        setTagList={setTagList}
+      />
+      <WriteArticle
+        contentValue={contentValue}
+        setContentValue={setContentValue}
+      />
+      <WriteFooter
+        tagList={tagList}
+        contentValue={contentValue}
+        setTap={setTap}
+      />
     </Template>
   );
 };
