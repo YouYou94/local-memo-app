@@ -1,3 +1,9 @@
+import { Box } from './FeedStyled';
+
 export const Feed = () => {
-  return <></>;
+  return (
+    <Box>
+      <Feed></Feed>
+    </Box>
+  );
 };
