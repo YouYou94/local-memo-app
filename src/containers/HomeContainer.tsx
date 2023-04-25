@@ -1,7 +1,7 @@
-import { Feed, Template } from '../components';
+import { Template } from '../components';
 
 const HomeContainer = () => {
-  return <Template>gd</Template>;
+  return <Template>??</Template>;
 };
 
 export default HomeContainer;
