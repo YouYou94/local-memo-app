@@ -1,4 +1,5 @@
 import { Footer, Button } from './WriteStyled';
+import { customAlphabet } from 'nanoid';
 
 type WriteFooterProps = {
   color: any;
@@ -13,6 +14,8 @@ export const WriteFooter = ({
   contentValue,
   setTap,
 }: WriteFooterProps) => {
+  const nanoid = customAlphabet('01234567899abcedf', 6);
+
   const handleOnClickEnrolDiary = () => {
     if (!tagList || !contentValue || !color) {
       alert('빈 항목이 있습니다.');
@@ -29,6 +32,7 @@ export const WriteFooter = ({
     ).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 
     const object = {
+      id: nanoid(),
       color: color.colorRGB,
       tag: tagList,
       content: contentValue,
