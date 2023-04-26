@@ -27,11 +27,15 @@ export const WriteFooter = ({
     const date = new Date();
     const nowTime = `${String(date.getFullYear()).substring(2)}.${String(
       date.getMonth() + 1,
-    ).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')} ${String(
+    ).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+
+    /*
+    ${String(
       Number(date.getHours()) > 12
         ? Number(date.getHours()) - 12
         : date.getHours(),
-    ).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+    ).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}
+    */
 
     const object = {
       id: nanoid(),
