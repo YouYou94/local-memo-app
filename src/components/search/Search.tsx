@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import GOOGLE from '../../assets/icon/google.png';
 import NAVER from '../../assets/icon/naver.png';
+import YOUTUBE from '../../assets/icon/youtube.png';
+import DAUM from '../../assets/icon/daum.png';
 import {
   Box,
   TimeBox,
@@ -11,15 +13,16 @@ import {
   SearchInput,
 } from './SearchStyled';
 
-const ENGINELIST = [GOOGLE, NAVER];
+const ENGINELIST = [GOOGLE, NAVER, YOUTUBE, DAUM];
 
 export const Search = () => {
   const [engineChange, setEngineChange] = useState<number>(0);
   const [searchValue, setSearchValue] = useState<string>('');
 
   const handleClickEngine = () => {
-    if (engineChange === 0) setEngineChange(engineChange + 1);
-    else if (engineChange === ENGINELIST.length - 1) setEngineChange(0);
+    if (engineChange >= 0) setEngineChange(engineChange + 1);
+
+    if (engineChange >= ENGINELIST.length - 1) setEngineChange(0);
   };
 
   const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +43,12 @@ export const Search = () => {
           break;
         case 1:
           window.location.href = `https://search.naver.com/search.naver?query=${searchValue}`;
+          break;
+        case 2:
+          window.location.href = `https://www.youtube.com/results?search_query=${searchValue}`;
+          break;
+        case 3:
+          window.location.href = `https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=${searchValue}`;
           break;
         default:
           break;
