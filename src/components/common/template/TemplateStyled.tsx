@@ -6,9 +6,6 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-top: 5rem;
-  padding: 0 2rem;
-
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
 `;
