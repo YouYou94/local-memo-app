@@ -1,9 +1,9 @@
-import { Feed, Template } from '../components';
+import { Search, Template } from '../components';
 
 const HomeContainer = () => {
   return (
     <Template>
-      <Feed />
+      <Search />
     </Template>
   );
 };
