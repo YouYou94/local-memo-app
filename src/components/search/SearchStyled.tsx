@@ -1,20 +1,5 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-`;
-
-export const TimeBox = styled.div`
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-`;
-
 export const SearchBox = styled.div`
   flex: 1;
 

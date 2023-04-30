@@ -4,8 +4,6 @@ import NAVER from '../../assets/icon/naver.png';
 import YOUTUBE from '../../assets/icon/youtube.png';
 import DAUM from '../../assets/icon/daum.png';
 import {
-  Box,
-  TimeBox,
   SearchBox,
   SearchBar,
   SearchEngine,
@@ -57,21 +55,18 @@ export const Search = () => {
   };
 
   return (
-    <Box>
-      <TimeBox></TimeBox>
-      <SearchBox>
-        <SearchBar>
-          <SearchEngine onClick={handleClickEngine}>
-            <EngineIcon icon={ENGINELIST[engineChange]} />
-          </SearchEngine>
-          <SearchInput
-            value={searchValue}
-            onChange={handleChangeSearch}
-            onKeyPress={handleKeyPressSearch}
-            placeholder="Please Enter Your Search Term..."
-          ></SearchInput>
-        </SearchBar>
-      </SearchBox>
-    </Box>
+    <SearchBox>
+      <SearchBar>
+        <SearchEngine onClick={handleClickEngine}>
+          <EngineIcon icon={ENGINELIST[engineChange]} />
+        </SearchEngine>
+        <SearchInput
+          value={searchValue}
+          onChange={handleChangeSearch}
+          onKeyPress={handleKeyPressSearch}
+          placeholder="Please Enter Your Search Term..."
+        ></SearchInput>
+      </SearchBar>
+    </SearchBox>
   );
 };
