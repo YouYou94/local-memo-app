@@ -1,8 +1,9 @@
-import { Search, Template } from '../components';
+import { Clock, Search, Template } from '../components';
 
 const HomeContainer = () => {
   return (
     <Template>
+      <Clock />
       <Search />
     </Template>
   );
