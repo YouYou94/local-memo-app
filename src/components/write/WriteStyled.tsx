@@ -18,7 +18,7 @@ export const ColorBox = styled.div`
   align-items: center;
 
   border-bottom: 1px solid rgb(205, 205, 205);
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 
   gap: 1rem;
 `;
@@ -41,6 +41,8 @@ export const TagBox = styled.div`
   display: flex;
   align-items: center;
 
+  padding: 0 1rem;
+
   gap: 0.5rem;
 `;
 
@@ -48,7 +50,6 @@ export const TagInput = styled.input`
   flex: 1;
 
   border: none;
-  padding-left: 0.5rem;
 
   outline: none;
 `;
@@ -83,7 +84,7 @@ export const WriteArea = styled.textarea`
   flex: 1;
 
   border: none;
-  padding: 1rem 0.2rem;
+  padding: 1rem;
 
   font-size: 1.3rem;
 
