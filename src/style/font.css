@@ -7,3 +7,8 @@
   font-family: 'Alkatra';
   src: url('./font/Alkatra-Regular.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'KonkhmerSleokchher';
+  src: url('./font/KonkhmerSleokchher-Regular.ttf') format('truetype');
+}
