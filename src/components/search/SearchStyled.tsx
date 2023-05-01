@@ -5,7 +5,6 @@ export const SearchBox = styled.div`
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 `;
 
 export const SearchBar = styled.div`
