@@ -9,3 +9,5 @@ export { WriteFooter } from './write/WriteFooter';
 
 export { Clock } from './clock/Clock';
 export { Search } from './search/Search';
+
+export { Note } from './note/Note';
