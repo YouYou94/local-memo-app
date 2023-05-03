@@ -2,14 +2,12 @@ import { Footer, Button } from './WriteStyled';
 import { customAlphabet } from 'nanoid';
 
 type WriteFooterProps = {
-  color: any;
   tagList: any;
   contentValue: string;
   setTap: any;
 };
 
 export const WriteFooter = ({
-  color,
   tagList,
   contentValue,
   setTap,
@@ -17,37 +15,28 @@ export const WriteFooter = ({
   const nanoid = customAlphabet('01234567899abcedf', 6);
 
   const handleOnClickEnrolDiary = () => {
-    if (!tagList || !contentValue || !color) {
+    if (!tagList || !contentValue) {
       alert('빈 항목이 있습니다.');
       return;
     }
 
-    const feedList = JSON.parse(localStorage.getItem('feed') || '');
+    const noteList = JSON.parse(localStorage.getItem('note') || '');
 
     const date = new Date();
     const nowTime = `${String(date.getFullYear()).substring(2)}.${String(
       date.getMonth() + 1,
     ).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
 
-    /*
-    ${String(
-      Number(date.getHours()) > 12
-        ? Number(date.getHours()) - 12
-        : date.getHours(),
-    ).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}
-    */
-
     const object = {
       id: nanoid(),
-      color: color.colorRGB,
       tag: tagList,
       content: contentValue,
       time: nowTime,
     };
 
-    localStorage.setItem('feed', JSON.stringify([object, ...feedList]));
+    localStorage.setItem('note', JSON.stringify([object, ...noteList]));
 
-    setTap(0);
+    setTap(1);
   };
 
   return (

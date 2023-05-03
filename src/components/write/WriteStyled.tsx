@@ -2,37 +2,12 @@ import styled from 'styled-components';
 
 /* Header */
 export const Header = styled.header`
-  height: 6rem;
+  height: 3rem;
 
   display: flex;
   flex-direction: column;
 
-  border-top: 1px solid rgb(205, 205, 205);
   border-bottom: 1px solid rgb(205, 205, 205);
-`;
-
-export const ColorBox = styled.div`
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-
-  border-bottom: 1px solid rgb(205, 205, 205);
-  padding: 0 1rem;
-
-  gap: 1rem;
-`;
-
-export const Color = styled.div<{ color: string; select: boolean }>`
-  width: 1.5rem;
-  height: 1.5rem;
-
-  border-radius: 0.5rem;
-  ${(prop) => (prop.select ? 'border: 3px solid rgb(0, 0, 0, .4)' : '')};
-
-  background-color: ${(prop) => prop.color};
-
-  cursor: pointer;
 `;
 
 export const TagBox = styled.div`
