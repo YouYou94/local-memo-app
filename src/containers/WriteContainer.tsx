@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-  Template,
-  WriteArticle,
-  WriteFooter,
-  WriteHeader,
-} from '../components';
+import { Template, Write } from '../components';
 
 const WriteContainer = ({ setTap }: any) => {
   const [tagValue, setTagValue] = useState<string>('');
@@ -13,19 +8,13 @@ const WriteContainer = ({ setTap }: any) => {
 
   return (
     <Template>
-      <WriteHeader
+      <Write
         tagValue={tagValue}
         tagList={tagList}
+        contentValue={contentValue}
         setTagValue={setTagValue}
         setTagList={setTagList}
-      />
-      <WriteArticle
-        contentValue={contentValue}
         setContentValue={setContentValue}
-      />
-      <WriteFooter
-        tagList={tagList}
-        contentValue={contentValue}
         setTap={setTap}
       />
     </Template>

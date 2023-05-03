@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Box = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
 /* Header */
 export const Header = styled.header`
   height: 3rem;
