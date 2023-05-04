@@ -1,4 +1,3 @@
-import { customAlphabet } from 'nanoid';
 import {
   Box,
   Header,
@@ -13,11 +12,11 @@ import {
 } from './WriteStyled';
 import { useState } from 'react';
 
-export const Write = ({ setTap }: any) => {
-  const [titleValue, setTitleValue] = useState<string>('');
+export const Write = ({ note, setNote, setIsUpdate }: any) => {
+  const [titleValue, setTitleValue] = useState<string>(note?.title || '');
   const [tagValue, setTagValue] = useState<string>('');
-  const [tagList, setTagList] = useState<Array<any>>([]);
-  const [contentValue, setContentValue] = useState<string>('');
+  const [tagList, setTagList] = useState<Array<any>>(note?.tag || []);
+  const [contentValue, setContentValue] = useState<string>(note?.content || '');
 
   /* Header */
   const handleCangeTitleInput = (
@@ -66,15 +65,11 @@ export const Write = ({ setTap }: any) => {
   };
 
   /* Footer */
-  const nanoid = customAlphabet('01234567899abcedf', 6);
-
-  const handleClickEnrolDiary = () => {
+  const handleClickSaveDiary = () => {
     if (!tagList || !contentValue || !titleValue) {
       alert('빈 항목이 있습니다.');
       return;
     }
-
-    const noteList = JSON.parse(localStorage.getItem('note') || '');
 
     const date = new Date();
     const nowTime = `${String(date.getFullYear()).substring(2)}.${String(
@@ -82,16 +77,16 @@ export const Write = ({ setTap }: any) => {
     ).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
 
     const object = {
-      id: nanoid(),
       title: titleValue,
       tag: tagList,
       content: contentValue,
       time: nowTime,
     };
 
-    localStorage.setItem('note', JSON.stringify([object, ...noteList]));
+    localStorage.setItem('note', JSON.stringify(object));
 
-    setTap(1);
+    setNote(object);
+    setIsUpdate(false);
   };
 
   return (
@@ -126,8 +121,8 @@ export const Write = ({ setTap }: any) => {
         />
       </Article>
       <Footer>
-        <Button onClick={() => setTap(0)}>돌아가기</Button>
-        <Button onClick={handleClickEnrolDiary}>등록하기</Button>
+        <Button onClick={() => setIsUpdate(false)}>돌아가기</Button>
+        <Button onClick={handleClickSaveDiary}>저장하기</Button>
       </Footer>
     </Box>
   );
