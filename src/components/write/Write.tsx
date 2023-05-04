@@ -9,37 +9,32 @@ import {
   WriteArea,
   Footer,
   Button,
+  TitleInput,
 } from './WriteStyled';
+import { useState } from 'react';
 
-type WriteFooterProps = {
-  tagValue: string;
-  tagList: any;
-  contentValue: string;
-  setTagValue: any;
-  setTagList: any;
-  setContentValue: any;
-  setTap: any;
-};
+export const Write = ({ setTap }: any) => {
+  const [titleValue, setTitleValue] = useState<string>('');
+  const [tagValue, setTagValue] = useState<string>('');
+  const [tagList, setTagList] = useState<Array<any>>([]);
+  const [contentValue, setContentValue] = useState<string>('');
 
-export const Write = ({
-  tagValue,
-  tagList,
-  contentValue,
-  setTagValue,
-  setTagList,
-  setContentValue,
-  setTap,
-}: WriteFooterProps) => {
   /* Header */
-  const handleOnChangeTagInput = (
+  const handleCangeTitleInput = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
+    const { value } = event.target;
+
+    setTitleValue(value);
+  };
+
+  const handleChangeTagInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
 
     setTagValue(value);
   };
 
-  const handleOnPressKeyTagInput = (
+  const handlePressKeyTagInput = (
     event: React.KeyboardEvent<HTMLInputElement>,
   ) => {
     const { key } = event;
@@ -53,7 +48,7 @@ export const Write = ({
     }
   };
 
-  const handleOnClickTag = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClickTag = (event: React.MouseEvent<HTMLDivElement>) => {
     const { id } = event.currentTarget;
 
     setTagList(
@@ -62,18 +57,19 @@ export const Write = ({
   };
 
   /* Article */
-  const handleOnChangeWriteArea = (
+  const handleChangeWriteArea = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const { value } = event.target;
 
     setContentValue(value);
   };
+
   /* Footer */
   const nanoid = customAlphabet('01234567899abcedf', 6);
 
-  const handleOnClickEnrolDiary = () => {
-    if (!tagList || !contentValue) {
+  const handleClickEnrolDiary = () => {
+    if (!tagList || !contentValue || !titleValue) {
       alert('빈 항목이 있습니다.');
       return;
     }
@@ -87,7 +83,7 @@ export const Write = ({
 
     const object = {
       id: nanoid(),
-      title: '타이틀입니다!',
+      title: titleValue,
       tag: tagList,
       content: contentValue,
       time: nowTime,
@@ -101,32 +97,37 @@ export const Write = ({
   return (
     <Box>
       <Header>
+        <TitleInput
+          value={titleValue}
+          onChange={handleCangeTitleInput}
+          placeholder="제목을 입력해보세요."
+        />
         <TagBox>
           {tagList?.map((tag: string, index: number): any => {
             return (
-              <Tag key={index} id={String(index)} onClick={handleOnClickTag}>
+              <Tag key={index} id={String(index)} onClick={handleClickTag}>
                 {tag}
               </Tag>
             );
           })}
           <TagInput
             value={tagValue}
-            onChange={handleOnChangeTagInput}
-            onKeyPress={handleOnPressKeyTagInput}
-            placeholder="# 태그를 입력해주세요."
+            onChange={handleChangeTagInput}
+            onKeyPress={handlePressKeyTagInput}
+            placeholder="태그를 입력해보세요."
           />
         </TagBox>
       </Header>
       <Article>
         <WriteArea
           value={contentValue}
-          onChange={handleOnChangeWriteArea}
-          placeholder="오늘의 다이어리를 작성해보세요."
+          onChange={handleChangeWriteArea}
+          placeholder="내용을 입력해보세요."
         />
       </Article>
       <Footer>
         <Button onClick={() => setTap(0)}>돌아가기</Button>
-        <Button onClick={handleOnClickEnrolDiary}>등록하기</Button>
+        <Button onClick={handleClickEnrolDiary}>등록하기</Button>
       </Footer>
     </Box>
   );
