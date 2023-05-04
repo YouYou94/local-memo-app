@@ -7,46 +7,6 @@ export const Box = styled.div`
   flex-direction: column;
 `;
 
-export const Header = styled.header`
-  height: 2rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  border-bottom: 1px solid rgb(204, 204, 204);
-  padding: 0 1rem;
-`;
-
-export const Milestone = styled.div`
-  width: 3rem;
-  height: 2rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const PageLabel = styled.label``;
-
-export const MilestoneButton = styled.button`
-  border: none;
-
-  background-color: transparent;
-
-  cursor: pointer;
-
-  :hover {
-    background-color: rgb(245, 245, 245);
-  }
-`;
-
-export const Article = styled.article`
-  flex: 1;
-
-  display: flex;
-`;
-
 /* Note */
 export const NoteBox = styled.div`
   flex: 1;
@@ -75,7 +35,7 @@ export const TitleTimeBox = styled.div`
   border-bottom: 1px solid rgb(205, 205, 205);
 `;
 
-export const NoteTitle = styled.h1`
+export const NoteTitle = styled.label`
   display: flex;
   align-items: center;
 `;
@@ -84,7 +44,7 @@ export const NoteTime = styled.label`
   display: flex;
   align-items: center;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
 `;
 
 export const TagBox = styled.div`
@@ -130,7 +90,7 @@ export const NoteArticle = styled.div`
 `;
 
 export const NoteFooter = styled.div`
-  height: 4rem;
+  height: 3rem;
 
   display: flex;
   justify-content: space-between;
@@ -141,14 +101,14 @@ export const NoteFooter = styled.div`
 `;
 
 export const Button = styled.button`
-  width: 8rem;
-  height: 2.5rem;
+  width: 7rem;
+  height: 2rem;
 
   border: none;
 
   background-color: transparent;
 
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 
   :hover {

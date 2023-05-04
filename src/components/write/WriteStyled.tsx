@@ -91,25 +91,27 @@ export const WriteArea = styled.textarea`
 
 /* Footer */
 export const Footer = styled.footer`
-  height: 4rem;
+  height: 3rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0 1rem;
 `;
 
 export const Button = styled.button`
-  width: 8rem;
-  height: 2.5rem;
+  width: 7rem;
+  height: 2rem;
 
   border: none;
 
   background-color: transparent;
 
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 
   :hover {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(235, 235, 235);
   }
 `;
