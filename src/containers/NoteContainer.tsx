@@ -1,6 +1,6 @@
-import { Note, Template } from '../components';
+import { Note, Template, Write } from '../components';
 
-const NoteContainer = () => {
+const NoteContainer = ({ setTap }: any) => {
   return (
     <Template>
       <Note />
