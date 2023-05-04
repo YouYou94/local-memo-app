@@ -2,18 +2,31 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
   flex: 1;
+
   display: flex;
   flex-direction: column;
+
+  border-right: 1px solid rgb(204, 204, 204);
 `;
 
 /* Header */
 export const Header = styled.header`
-  height: 3rem;
+  height: 6rem;
 
   display: flex;
   flex-direction: column;
 
   border-bottom: 1px solid rgb(205, 205, 205);
+`;
+
+export const TitleInput = styled.input`
+  flex: 1;
+
+  border: none;
+  border-bottom: 1px solid rgb(205, 205, 205);
+  padding: 0 1rem;
+
+  outline: none;
 `;
 
 export const TagBox = styled.div`
@@ -67,7 +80,7 @@ export const WriteArea = styled.textarea`
   border: none;
   padding: 1rem;
 
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 
   background-color: transparent;
 

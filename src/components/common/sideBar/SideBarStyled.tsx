@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  width: 4rem;
+  width: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -21,8 +21,8 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
   display: flex;
   justify-content: center;
@@ -33,7 +33,7 @@ export const Item = styled.li`
   cursor: pointer;
 
   :hover {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(235, 235, 235);
   }
 `;
 
