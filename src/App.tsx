@@ -1,32 +1,28 @@
 import { RecoilRoot } from 'recoil';
 import { useEffect, useState } from 'react';
-import { TopBar } from './components';
-import { EditContainer, HomeContainer, WriteContainer } from './containers';
+import { SideBar } from './components';
+import { NoteContainer, HomeContainer } from './containers';
 import './style/font.css';
 import './App.css';
 
 function App() {
-  /* 나의 작고 소중한 일기 피드 앱 */
-  /* My Little and Precious Diary Feed App */
-  /* MLPDFeed */
+  /* 나의 위젯 앱 */
+  /* My Widget App */
+  /* MWA */
   const [tap, setTap] = useState<number>(0);
 
   useEffect(() => {
-    const feed = localStorage.getItem('feed');
+    const note = localStorage.getItem('note');
 
-    if (!feed) localStorage.setItem('feed', JSON.stringify([]));
+    if (!note) localStorage.setItem('note', JSON.stringify({}));
   }, []);
 
   return (
     <RecoilRoot>
       <div className="App">
-        <TopBar setTap={setTap} />
-        {/* Home */}
+        <SideBar setTap={setTap} />
         {tap === 0 ? <HomeContainer /> : <></>}
-        {/* Write */}
-        {tap === 1 ? <WriteContainer setTap={setTap} /> : <></>}
-        {/* Edit */}
-        {tap === 2 ? <EditContainer /> : <></>}
+        {tap === 1 ? <NoteContainer /> : <></>}
       </div>
     </RecoilRoot>
   );
