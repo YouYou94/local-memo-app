@@ -19,12 +19,17 @@ export const Header = styled.header`
   border-bottom: 1px solid rgb(205, 205, 205);
 `;
 
-export const TitleInput = styled.input`
+export const TitleInput = styled.input<{ mode: string }>`
   flex: 1;
 
   border: none;
   border-bottom: 1px solid rgb(205, 205, 205);
   padding: 0 1rem;
+
+  background-color: transparent;
+
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
 
   outline: none;
 `;
@@ -40,10 +45,15 @@ export const TagBox = styled.div`
   gap: 0.5rem;
 `;
 
-export const TagInput = styled.input`
+export const TagInput = styled.input<{ mode: string }>`
   flex: 1;
 
   border: none;
+
+  background-color: transparent;
+
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
 
   outline: none;
 `;
@@ -74,7 +84,7 @@ export const Article = styled.article`
   border-bottom: 1px solid rgb(204, 204, 204);
 `;
 
-export const WriteArea = styled.textarea`
+export const WriteArea = styled.textarea<{ mode: string }>`
   flex: 1;
 
   border: none;
@@ -83,6 +93,9 @@ export const WriteArea = styled.textarea`
   font-size: 1.1rem;
 
   background-color: transparent;
+
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
 
   resize: none;
 
@@ -100,7 +113,7 @@ export const Footer = styled.footer`
   padding: 0 1rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ mode: string }>`
   width: 7rem;
   height: 2rem;
 
@@ -111,7 +124,10 @@ export const Button = styled.button`
   font-size: 1.1rem;
   font-weight: bold;
 
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
+
   :hover {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(204, 204, 204);
   }
 `;

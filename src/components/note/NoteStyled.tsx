@@ -100,7 +100,7 @@ export const NoteFooter = styled.div`
   padding: 0 1rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ mode: string }>`
   width: 7rem;
   height: 2rem;
 
@@ -111,7 +111,10 @@ export const Button = styled.button`
   font-size: 1.1rem;
   font-weight: bold;
 
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
+
   :hover {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(204, 204, 204);
   }
 `;

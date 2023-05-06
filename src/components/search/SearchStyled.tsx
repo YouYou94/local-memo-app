@@ -30,10 +30,6 @@ export const SearchEngine = styled.div`
   border-radius: 50%;
 
   cursor: pointer;
-
-  :hover {
-    background-color: rgb(250, 250, 250);
-  }
 `;
 
 export const EngineIcon = styled.div<{ icon?: any }>`
@@ -45,7 +41,7 @@ export const EngineIcon = styled.div<{ icon?: any }>`
   background-size: cover;
 `;
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.input<{ mode: string }>`
   width: 100%;
   height: 100%;
 
@@ -54,6 +50,9 @@ export const SearchInput = styled.input`
 
   background-color: transparent;
   font-size: 1.1rem;
+
+  color: ${(prop) =>
+    prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
 
   :focus {
     outline: none;

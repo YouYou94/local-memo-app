@@ -52,8 +52,10 @@ export const DotLabel = styled.label`
   font-size: 6rem;
 `;
 
-export const AmpmLabel = styled.label`
-  border-bottom: 1px solid rgb(0, 0, 0);
+export const AmpmLabel = styled.label<{ mode: string }>`
+  border-bottom: 1px solid
+    ${(prop) =>
+      prop.mode === 'bright' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'};
 
   font-family: 'KonkhmerSleokchher';
   font-size: 2rem;
