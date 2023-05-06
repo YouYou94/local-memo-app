@@ -5,8 +5,6 @@ const NoteContainer = () => {
   const [note, setNote] = useState<Object>({});
   const [isUpdate, setIsUpdate] = useState<boolean>(false);
 
-  console.log(isUpdate);
-
   useEffect(() => {
     if (localStorage.getItem('note'))
       setNote(JSON.parse(localStorage.getItem('note') || ''));
