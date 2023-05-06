@@ -9,8 +9,11 @@ import {
   AmpmLabel,
   SecondsLabel,
 } from './ClockStyled';
+import { useRecoilValue } from 'recoil';
+import { getModeState } from '../../recoil';
 
 export const Clock = () => {
+  const darkmode = useRecoilValue(getModeState);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -35,7 +38,9 @@ export const Clock = () => {
           </HourMinuteLabel>
         </HourMinuteBox>
         <AmpmSecondsBox>
-          <AmpmLabel>{time.getHours() > 12 ? 'PM' : 'AM'}</AmpmLabel>
+          <AmpmLabel mode={darkmode}>
+            {time.getHours() > 12 ? 'PM' : 'AM'}
+          </AmpmLabel>
           <SecondsLabel>
             {String(time.getSeconds()).padStart(2, '0')}
           </SecondsLabel>

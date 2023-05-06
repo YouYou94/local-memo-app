@@ -12,8 +12,12 @@ import {
   NoteFooter,
   Button,
 } from './NoteStyled';
+import { useRecoilValue } from 'recoil';
+import { getModeState } from '../../recoil';
 
 export const Note = ({ note, setNote, setIsUpdate }: any) => {
+  const darkmode = useRecoilValue(getModeState);
+
   const handleClickDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!note.title) {
       alert('노트가 비어있습니다!');
@@ -51,10 +55,10 @@ export const Note = ({ note, setNote, setIsUpdate }: any) => {
         </NoteHeader>
         <NoteArticle>{note?.content || '내용을 작성해보세요.'}</NoteArticle>
         <NoteFooter>
-          <Button onClick={handleClickDelete} id={note?.id}>
+          <Button mode={darkmode} onClick={handleClickDelete} id={note?.id}>
             지우기
           </Button>
-          <Button onClick={handleClickUpdate} id={note?.id}>
+          <Button mode={darkmode} onClick={handleClickUpdate} id={note?.id}>
             수정하기
           </Button>
         </NoteFooter>

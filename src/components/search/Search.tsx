@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import GOOGLE from '../../assets/icon/google.png';
-import NAVER from '../../assets/icon/naver.png';
-import YOUTUBE from '../../assets/icon/youtube.png';
-import DAUM from '../../assets/icon/daum.png';
+import GOOGLE from '../../assets/search/google.png';
+import NAVER from '../../assets/search/naver.png';
+import YOUTUBE from '../../assets/search/youtube.png';
+import DAUM from '../../assets/search/daum.png';
 import {
   SearchBox,
   SearchBar,
@@ -10,10 +10,13 @@ import {
   EngineIcon,
   SearchInput,
 } from './SearchStyled';
+import { useRecoilValue } from 'recoil';
+import { getModeState } from '../../recoil/selector';
 
 const ENGINELIST = [GOOGLE, NAVER, YOUTUBE, DAUM];
 
 export const Search = () => {
+  const darkmode = useRecoilValue(getModeState);
   const [engineChange, setEngineChange] = useState<number>(0);
   const [searchValue, setSearchValue] = useState<string>('');
 
@@ -61,6 +64,7 @@ export const Search = () => {
           <EngineIcon icon={ENGINELIST[engineChange]} />
         </SearchEngine>
         <SearchInput
+          mode={darkmode}
           value={searchValue}
           onChange={handleChangeSearch}
           onKeyPress={handleKeyPressSearch}

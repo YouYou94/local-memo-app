@@ -1,3 +1,4 @@
+import { useRecoilValue } from 'recoil';
 import {
   Box,
   Header,
@@ -11,8 +12,10 @@ import {
   TitleInput,
 } from './WriteStyled';
 import { useState } from 'react';
+import { getModeState } from '../../recoil';
 
 export const Write = ({ note, setNote, setIsUpdate }: any) => {
+  const darkmode = useRecoilValue(getModeState);
   const [titleValue, setTitleValue] = useState<string>(note?.title || '');
   const [tagValue, setTagValue] = useState<string>('');
   const [tagList, setTagList] = useState<Array<any>>(note?.tag || []);
@@ -93,6 +96,7 @@ export const Write = ({ note, setNote, setIsUpdate }: any) => {
     <Box>
       <Header>
         <TitleInput
+          mode={darkmode}
           value={titleValue}
           onChange={handleCangeTitleInput}
           placeholder="제목을 입력해보세요."
@@ -106,6 +110,7 @@ export const Write = ({ note, setNote, setIsUpdate }: any) => {
             );
           })}
           <TagInput
+            mode={darkmode}
             value={tagValue}
             onChange={handleChangeTagInput}
             onKeyPress={handlePressKeyTagInput}
@@ -115,14 +120,19 @@ export const Write = ({ note, setNote, setIsUpdate }: any) => {
       </Header>
       <Article>
         <WriteArea
+          mode={darkmode}
           value={contentValue}
           onChange={handleChangeWriteArea}
           placeholder="내용을 입력해보세요."
         />
       </Article>
       <Footer>
-        <Button onClick={() => setIsUpdate(false)}>돌아가기</Button>
-        <Button onClick={handleClickSaveDiary}>저장하기</Button>
+        <Button mode={darkmode} onClick={() => setIsUpdate(false)}>
+          돌아가기
+        </Button>
+        <Button mode={darkmode} onClick={handleClickSaveDiary}>
+          저장하기
+        </Button>
       </Footer>
     </Box>
   );
