@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/newtap/static/css/main.947954cf.css",
-    "main.js": "/newtap/static/js/main.2227b3a8.js",
-    "static/media/KonkhmerSleokchher-Regular.ttf": "/newtap/static/media/KonkhmerSleokchher-Regular.f95f31a25d0561420e85.ttf",
-    "static/media/Alkatra-Regular.ttf": "/newtap/static/media/Alkatra-Regular.23ab70245e38b361521f.ttf",
-    "static/media/daum.png": "/newtap/static/media/daum.2fd21cad11f8c2c590c2.png",
-    "static/media/Orbitron-VariableFont_wght.ttf": "/newtap/static/media/Orbitron-VariableFont_wght.453377cb91a4554c36ce.ttf",
-    "static/media/google.png": "/newtap/static/media/google.e12914ad8afda3f6f2e8.png",
-    "static/media/youtube.png": "/newtap/static/media/youtube.53e70a78a824adc8e296.png",
-    "static/media/darkmode.png": "/newtap/static/media/darkmode.5aa66b42e5e4c6d32352.png",
-    "static/media/read.png": "/newtap/static/media/read.b20dd0bfaa0ff86eed3b.png",
-    "index.html": "/newtap/index.html",
-    "main.947954cf.css.map": "/newtap/static/css/main.947954cf.css.map",
-    "main.2227b3a8.js.map": "/newtap/static/js/main.2227b3a8.js.map"
+    "main.css": "/new-tap/static/css/main.6c51aad9.css",
+    "main.js": "/new-tap/static/js/main.4fc7e1c5.js",
+    "static/media/KonkhmerSleokchher-Regular.ttf": "/new-tap/static/media/KonkhmerSleokchher-Regular.f95f31a25d0561420e85.ttf",
+    "static/media/Alkatra-Regular.ttf": "/new-tap/static/media/Alkatra-Regular.23ab70245e38b361521f.ttf",
+    "static/media/daum.png": "/new-tap/static/media/daum.2fd21cad11f8c2c590c2.png",
+    "static/media/Orbitron-VariableFont_wght.ttf": "/new-tap/static/media/Orbitron-VariableFont_wght.453377cb91a4554c36ce.ttf",
+    "static/media/google.png": "/new-tap/static/media/google.e12914ad8afda3f6f2e8.png",
+    "static/media/youtube.png": "/new-tap/static/media/youtube.53e70a78a824adc8e296.png",
+    "static/media/darkmode.png": "/new-tap/static/media/darkmode.5aa66b42e5e4c6d32352.png",
+    "static/media/read.png": "/new-tap/static/media/read.b20dd0bfaa0ff86eed3b.png",
+    "index.html": "/new-tap/index.html",
+    "main.6c51aad9.css.map": "/new-tap/static/css/main.6c51aad9.css.map",
+    "main.4fc7e1c5.js.map": "/new-tap/static/js/main.4fc7e1c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.947954cf.css",
-    "static/js/main.2227b3a8.js"
+    "static/css/main.6c51aad9.css",
+    "static/js/main.4fc7e1c5.js"
   ]
 }
