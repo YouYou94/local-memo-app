@@ -14,6 +14,7 @@ import {
 } from './NoteStyled';
 import { useRecoilValue } from 'recoil';
 import { getModeState } from '../../recoil';
+import { Markdown } from './markdown/Markdown';
 
 export const Note = ({ note, setNote, setIsUpdate }: any) => {
   const darkmode = useRecoilValue(getModeState);
@@ -53,7 +54,13 @@ export const Note = ({ note, setNote, setIsUpdate }: any) => {
             }) || '태그가 비어있습니다.'}
           </TagBox>
         </NoteHeader>
-        <NoteArticle>{note?.content || '내용을 작성해보세요.'}</NoteArticle>
+        <NoteArticle>
+          {note?.content ? (
+            <Markdown content={note.content} />
+          ) : (
+            '내용을 작성해보세요.'
+          )}
+        </NoteArticle>
         <NoteFooter>
           <Button mode={darkmode} onClick={handleClickDelete} id={note?.id}>
             지우기

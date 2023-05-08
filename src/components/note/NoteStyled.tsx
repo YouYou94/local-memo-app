@@ -85,8 +85,6 @@ export const NoteArticle = styled.div`
   font-size: 1.1rem;
 
   border-bottom: 1px solid rgb(204, 204, 204);
-
-  white-space: pre-wrap;
 `;
 
 export const NoteFooter = styled.div`
