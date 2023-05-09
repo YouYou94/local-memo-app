@@ -1,5 +1,5 @@
 {
-  "name": "note-app",
+  "name": "new-tap",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,5 +56,5 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
   },
-  "homepage": "http://YouYou94.github.io/newtap/"
+  "homepage": "http://YouYou94.github.io/new-tap/"
 }
