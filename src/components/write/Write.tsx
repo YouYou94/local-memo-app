@@ -69,11 +69,6 @@ export const Write = ({ note, setNote, setIsUpdate }: any) => {
 
   /* Footer */
   const handleClickSaveDiary = () => {
-    if (!tagList || !contentValue || !titleValue) {
-      alert('빈 항목이 있습니다.');
-      return;
-    }
-
     const date = new Date();
     const nowTime = `${String(date.getFullYear()).substring(2)}.${String(
       date.getMonth() + 1,
