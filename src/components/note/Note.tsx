@@ -43,7 +43,7 @@ export const Note = ({ note, setNote, setIsUpdate }: any) => {
       <NoteBox>
         <NoteHeader>
           <TitleTimeBox>
-            <NoteTitle>{note?.title || '존재하는 노트가 없습니다.'}</NoteTitle>
+            <NoteTitle>{note?.title || '제목이 비어있습니다.'}</NoteTitle>
             <NoteTime>
               {note?.time ? `수정한 날짜 : ${note?.time}` : ''}
             </NoteTime>
