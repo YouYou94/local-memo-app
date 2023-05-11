@@ -1,7 +1,11 @@
-import { Template } from '../components';
+import { Template, Todo } from '../components';
 
 const TodoContainer = () => {
-  return <Template>투두</Template>;
+  return (
+    <Template>
+      <Todo />
+    </Template>
+  );
 };
 
 export default TodoContainer;

@@ -9,3 +9,5 @@ export { Clock } from './clock/Clock';
 export { Search } from './search/Search';
 
 export { Note } from './note/Note';
+
+export { Todo } from './todo/Todo';
