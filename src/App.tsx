@@ -1,7 +1,7 @@
 import { RecoilRoot } from 'recoil';
 import { useEffect, useState } from 'react';
 import { SideBar } from './components';
-import { NoteContainer, HomeContainer } from './containers';
+import { NoteContainer, HomeContainer, TodoContainer } from './containers';
 import './style/font.css';
 import './App.css';
 
@@ -23,6 +23,7 @@ function App() {
         <SideBar setTap={setTap} />
         {tap === 0 ? <HomeContainer /> : <></>}
         {tap === 1 ? <NoteContainer /> : <></>}
+        {tap === 2 ? <TodoContainer /> : <></>}
       </div>
     </RecoilRoot>
   );
