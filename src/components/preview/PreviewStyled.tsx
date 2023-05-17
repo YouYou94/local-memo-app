@@ -6,6 +6,9 @@ export const Box = styled.div`
   display: flex;
 `;
 
-export const MemoBox = styled.article`
+export const MemoBox = styled.article<{ mode: string }>`
   flex: 1;
+
+  color: ${(prop) =>
+    prop.mode === 'true' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'};
 `;
