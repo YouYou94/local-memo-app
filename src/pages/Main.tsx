@@ -1,5 +1,11 @@
 import { useRecoilValue } from 'recoil';
-import { FlexColumnTemplate, FlexTemplate, Nav, Write } from '../components';
+import {
+  FlexColumnTemplate,
+  FlexTemplate,
+  Nav,
+  Preview,
+  Write,
+} from '../components';
 import { getModeState } from '../recoil';
 import { useEffect, useState } from 'react';
 
@@ -27,6 +33,7 @@ const Main = () => {
           setTitleState={setTitle}
           setContentState={setContent}
         />
+        <Preview state={content} />
       </FlexTemplate>
     </FlexColumnTemplate>
   );
