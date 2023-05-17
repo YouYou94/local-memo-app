@@ -9,7 +9,7 @@ import {
 import { getModeState } from '../recoil';
 import { useEffect, useState } from 'react';
 
-const Main = () => {
+const Memo = () => {
   const mode = useRecoilValue(getModeState);
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
@@ -39,4 +39,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Memo;
