@@ -1,6 +1,6 @@
 {
-  "name": "new-tap",
-  "version": "0.1.0",
+  "name": "off-line-memo-app",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
