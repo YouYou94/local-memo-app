@@ -6,7 +6,7 @@ export const FlexTemplate = styled.div<{ mode: string }>`
   display: flex;
 
   background-color: ${(prop) =>
-    prop.mode === 'true' ? 'rgb(35, 35, 35)' : 'rgb(255, 255, 255)'};
+    prop.mode === 'true' ? 'rgb(35, 35, 35)' : 'rgb(251, 251, 251)'};
 `;
 
 export const FlexColumnTemplate = styled(FlexTemplate)`

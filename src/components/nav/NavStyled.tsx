@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ModeIcon from '../../assets/menu/mode.png';
 
 export const NavBox = styled.nav`
-  height: 5rem;
+  height: 4rem;
 
   display: flex;
   justify-content: flex-end;
@@ -31,7 +31,7 @@ export const ModeBox = styled.div<{ mode: string }>`
 
   :hover {
     background-color: ${(prop) =>
-      prop.mode === 'true' ? 'rgb(255, 255, 255)' : 'rgb(204, 204, 204)'};
+      prop.mode === 'true' ? 'rgb(251, 251, 251)' : 'rgb(204, 204, 204)'};
   }
 `;
 
