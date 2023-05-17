@@ -1,29 +1,24 @@
 import { RecoilRoot } from 'recoil';
-import { useEffect, useState } from 'react';
-import { SideBar } from './components';
-import { NoteContainer, HomeContainer, TodoContainer } from './containers';
+import { useEffect } from 'react';
 import './style/font.css';
 import './App.css';
+import { Router } from './router/Router';
 
 function App() {
-  /* 나의 위젯 앱 */
-  /* My Widget App */
+  /* 오프라인 메모 앱 */
+  /* Off-Line Memo App */
   /* MWA */
-  const [tap, setTap] = useState<number>(0);
 
   useEffect(() => {
-    const note = localStorage.getItem('note');
+    const notes = localStorage.getItem('memo');
 
-    if (!note) localStorage.setItem('note', JSON.stringify({}));
+    if (!notes) localStorage.setItem('memo', JSON.stringify({}));
   }, []);
 
   return (
     <RecoilRoot>
       <div className="App">
-        <SideBar setTap={setTap} />
-        {tap === 0 ? <HomeContainer /> : <></>}
-        {tap === 1 ? <NoteContainer /> : <></>}
-        {tap === 2 ? <TodoContainer /> : <></>}
+        <Router />
       </div>
     </RecoilRoot>
   );
