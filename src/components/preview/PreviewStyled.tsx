@@ -9,6 +9,8 @@ export const Box = styled.div`
 export const MemoBox = styled.article<{ mode: string }>`
   flex: 1;
 
+  padding: 4rem 1rem 1rem 1rem;
+
   color: ${(prop) =>
     prop.mode === 'true' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'};
 `;

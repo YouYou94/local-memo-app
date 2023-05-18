@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Box = styled.div`
   flex: 1;
 
-  padding: 4rem 1rem 1rem 1rem;
-
   white-space: pre-wrap;
 `;
 
