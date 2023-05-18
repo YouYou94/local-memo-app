@@ -67,7 +67,9 @@ export const Markdown = ({ content }: MarkdownProps) => {
                     v.replaceAll('_', '〃_〃').split('〃')[index - 1] === '_' &&
                     v.replaceAll('_', '〃_〃').split('〃')[index + 1] === '_'
                   )
-                    italicValue = <ItalicSpan>{element}</ItalicSpan>;
+                    italicValue = (
+                      <ItalicSpan key={index}>{element}</ItalicSpan>
+                    );
                   else if (element === '_') italicValue = null;
                   else italicValue = element;
 
@@ -92,7 +94,9 @@ export const Markdown = ({ content }: MarkdownProps) => {
                       '~~' &&
                     v.replaceAll('~~', '〃~~〃').split('〃')[index + 1] === '~~'
                   )
-                    italicValue = <ThroughSpan>{element}</ThroughSpan>;
+                    italicValue = (
+                      <ThroughSpan key={index}>{element}</ThroughSpan>
+                    );
                   else if (element === '~~') italicValue = null;
                   else italicValue = element;
 
