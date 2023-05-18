@@ -5,10 +5,23 @@ export const NavBox = styled.nav`
   height: 4rem;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 
   padding: 0 2rem;
+`;
+
+export const TitleBox = styled.div`
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+`;
+
+export const Title = styled.h1`
+  font-family: 'Alkatra';
+
+  user-select: none;
 `;
 
 export const ModeBox = styled.div<{ mode: string }>`
