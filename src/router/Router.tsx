@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Main, Memo } from '../pages';
+import { Read, Main, Memo, MemoList } from '../pages';
 
 export const Router = () => {
   return (
@@ -7,7 +7,10 @@ export const Router = () => {
       <Routes>
         <Route path="/*" element={<Navigate to="/off-line-memo-app" />} />
         <Route path="/off-line-memo-app" element={<Main />} />
-        <Route path="/off-line-memo-app/memo" element={<Memo />} />
+        <Route path="/off-line-memo-app/memo" element={<Read />}>
+          <Route path="" element={<MemoList />} />
+          <Route path=":id" element={<Memo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

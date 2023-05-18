@@ -1,11 +1,5 @@
 import { useRecoilValue } from 'recoil';
-import {
-  FlexColumnTemplate,
-  FlexTemplate,
-  Nav,
-  Preview,
-  Write,
-} from '../components';
+import { FlexTemplate, Preview, Write } from '../components';
 import { getModeState } from '../recoil';
 import { useEffect, useState } from 'react';
 
@@ -24,18 +18,15 @@ const Memo = () => {
   }, []);
 
   return (
-    <FlexColumnTemplate mode={mode.toString()}>
-      <Nav />
-      <FlexTemplate mode={mode.toString()}>
-        <Write
-          titleState={title}
-          contentState={content}
-          setTitleState={setTitle}
-          setContentState={setContent}
-        />
-        <Preview state={content} />
-      </FlexTemplate>
-    </FlexColumnTemplate>
+    <FlexTemplate mode={mode.toString()}>
+      <Write
+        titleState={title}
+        contentState={content}
+        setTitleState={setTitle}
+        setContentState={setContent}
+      />
+      <Preview state={content} />
+    </FlexTemplate>
   );
 };
 
