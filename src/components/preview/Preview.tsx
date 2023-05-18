@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { Box, MemoBox } from './PreviewStyled';
-import { Markdown } from './markdown/Markdown';
+import { Markdown } from '../markdown/Markdown';
 import { getModeState } from '../../recoil';
 
 type PreviewProps = {
