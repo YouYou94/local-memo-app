@@ -12,8 +12,10 @@ import {
   Button,
 } from './WriteStyled';
 import { useNavigate, useParams } from 'react-router-dom';
+import { MemoType } from '../../interface/MemoInterface';
 
 type WriteProps = {
+  paramId: string | undefined;
   titleState: string;
   contentState: string;
   setTitleState: React.Dispatch<React.SetStateAction<string>>;
@@ -21,6 +23,7 @@ type WriteProps = {
 };
 
 export const Write = ({
+  paramId,
   titleState,
   contentState,
   setTitleState,
@@ -29,7 +32,7 @@ export const Write = ({
   const mode = useRecoilValue(getModeState);
   const navigate = useNavigate();
   const param = useParams();
-  const nanoid = customAlphabet('abcd!@#$', 4);
+  const nanoid = customAlphabet('abcd1234', 4);
 
   const handleChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -46,8 +49,7 @@ export const Write = ({
   };
 
   const handleClickDelete = () => {
-    setTitleState('');
-    setContentState('');
+    navigate(-1);
   };
 
   const handleClickSave = () => {
@@ -62,16 +64,33 @@ export const Write = ({
       ).padStart(2, '0')}. ${String(date.getDate())}`,
     };
 
-    const existingData = JSON.parse(localStorage.getItem('memo') || '[]');
+    const existingDatas = JSON.parse(localStorage.getItem('memo') || '[]');
 
-    localStorage.setItem('memo', JSON.stringify([object, ...existingData]));
+    localStorage.setItem('memo', JSON.stringify([object, ...existingDatas]));
 
     navigate('/off-line-memo-app/memo');
 
     alert('저장되었습니다!');
   };
 
-  const handleClickUpdate = () => {};
+  const handleClickUpdate = () => {
+    let existingDatas = JSON.parse(localStorage.getItem('memo') || '[]');
+    const index = existingDatas.findIndex(
+      (existingData: MemoType) => existingData.id === paramId,
+    );
+
+    existingDatas[index] = {
+      ...existingDatas[index],
+      title: titleState,
+      content: contentState,
+    };
+
+    localStorage.setItem('memo', JSON.stringify(existingDatas));
+
+    navigate('/off-line-memo-app/memo');
+
+    alert('수정되었습니다!');
+  };
 
   return (
     <Box>
@@ -93,7 +112,7 @@ export const Write = ({
       </WriteBox>
       <ButtonBox>
         <Button onClick={handleClickDelete} mode={mode.toString()}>
-          지우기
+          뒤로가기
         </Button>
         {param?.id === 'enrol' ? (
           <Button onClick={handleClickSave} mode={mode.toString()}>
