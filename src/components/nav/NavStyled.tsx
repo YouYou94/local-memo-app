@@ -15,6 +15,10 @@ export const NavBox = styled.nav<{ mode: string }>`
 
   background-color: ${(prop) =>
     prop.mode === 'true' ? 'rgb(35, 35, 35)' : 'rgb(251, 251, 251)'};
+
+  @media screen and (max-width: 1024px) {
+    height: 3rem;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -55,6 +59,11 @@ export const Menu = styled.li<{ mode: string }>`
     background-color: ${(prop) =>
       prop.mode === 'true' ? 'rgb(251, 251, 251)' : 'rgb(204, 204, 204)'};
   }
+
+  @media screen and (max-width: 1024px) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `;
 
 export const Mode = styled(Menu)`
@@ -71,4 +80,9 @@ export const MenuIcon = styled.div<{ iconUrl: string }>`
   background-image: url(${(prop) => prop.iconUrl});
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (max-width: 1024px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;

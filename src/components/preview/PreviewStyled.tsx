@@ -6,6 +6,10 @@ export const Box = styled.div`
   display: flex;
 
   margin-top: 4rem;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const MemoBox = styled.article<{ mode: string }>`

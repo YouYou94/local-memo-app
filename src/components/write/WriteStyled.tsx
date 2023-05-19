@@ -15,6 +15,10 @@ export const TitleBox = styled.article`
 
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    height: 3rem;
+  }
 `;
 
 export const TitleInput = styled.input<{ mode: string }>`
@@ -32,6 +36,10 @@ export const TitleInput = styled.input<{ mode: string }>`
     prop.mode === 'true' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'};
 
   outline: none;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const WriteBox = styled.article`
@@ -58,6 +66,10 @@ export const WriteArea = styled.textarea<{ mode: string }>`
   resize: none;
 
   outline: none;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ButtonBox = styled.footer`

@@ -46,8 +46,6 @@ export const LetterBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
-// 반응형 웹
-// 폰트 사이즈
 
 export const TitleBox = styled.div`
   flex: 1;
@@ -63,6 +61,12 @@ export const ContentBox = styled.div`
 
 export const Title = styled.h2`
   display: flex;
+
+  font-weight: bold;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const Content = styled.label`
