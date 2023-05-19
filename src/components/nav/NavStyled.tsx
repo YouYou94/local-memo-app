@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 
-export const NavBox = styled.nav`
-  height: 5rem;
+export const NavBox = styled.nav<{ mode: string }>`
+  position: fixed;
+
+  width: 100%;
+  height: 4rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 2rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgb(204, 204, 204);
+
+  background-color: ${(prop) =>
+    prop.mode === 'true' ? 'rgb(35, 35, 35)' : 'rgb(251, 251, 251)'};
 `;
 
 export const TitleBox = styled.div`
@@ -30,8 +37,8 @@ export const MenuBox = styled.ul`
 `;
 
 export const Menu = styled.li<{ mode: string }>`
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
   display: flex;
   justify-content: center;

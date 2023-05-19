@@ -24,7 +24,7 @@ export const Nav = () => {
   }, [mode]);
 
   return (
-    <NavBox>
+    <NavBox mode={mode.toString()}>
       <TitleBox>
         {location.pathname !== '/off-line-memo-app' ? (
           <Title>OMemo</Title>

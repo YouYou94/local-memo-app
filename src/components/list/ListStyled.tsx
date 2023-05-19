@@ -7,6 +7,7 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
 
+  margin-top: 4rem;
   padding: 2rem 2rem 0 2rem;
 
   gap: 1rem;

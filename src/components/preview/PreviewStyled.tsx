@@ -4,6 +4,8 @@ export const Box = styled.div`
   flex: 1;
 
   display: flex;
+
+  margin-top: 4rem;
 `;
 
 export const MemoBox = styled.article<{ mode: string }>`

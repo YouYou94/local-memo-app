@@ -6,6 +6,7 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
 
+  margin-top: 4rem;
   border-right: 1px solid rgb(204, 204, 204);
 `;
 
