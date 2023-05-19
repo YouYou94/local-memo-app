@@ -33,7 +33,7 @@ export const Nav = () => {
         )}
       </TitleBox>
       <MenuBox>
-        {location.pathname !== '/off-line-memo-app/memo/enrol' ? (
+        {location.pathname === '/off-line-memo-app/memo' ? (
           <Menu
             mode={mode.toString()}
             onClick={() => navigate('/off-line-memo-app/memo/enrol')}
