@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import ModeIcon from '../../assets/menu/mode.png';
 
 export const NavBox = styled.nav`
-  height: 4rem;
+  height: 5rem;
 
   display: flex;
   justify-content: space-between;
@@ -24,9 +23,15 @@ export const Title = styled.h1`
   user-select: none;
 `;
 
-export const ModeBox = styled.div<{ mode: string }>`
-  width: 2.5rem;
-  height: 2.5rem;
+export const MenuBox = styled.ul`
+  display: flex;
+
+  gap: 1rem;
+`;
+
+export const Menu = styled.li<{ mode: string }>`
+  width: 3rem;
+  height: 3rem;
 
   display: flex;
   justify-content: center;
@@ -35,12 +40,9 @@ export const ModeBox = styled.div<{ mode: string }>`
   border-radius: 50%;
 
   background-color: ${(prop) =>
-    prop.mode === 'true' ? 'rgb(204, 204, 204)' : 'rgb(245, 245, 245)'};
+    prop.mode === 'true' ? 'rgb(204, 204, 204)' : 'rgb(235, 235, 235)'};
 
-  ${(prop) =>
-    prop.mode === 'true' ? 'transform: scaleX(-1) scaleY(-1);' : ''};
-
-  transition: all 0.3s;
+  cursor: pointer;
 
   :hover {
     background-color: ${(prop) =>
@@ -48,13 +50,18 @@ export const ModeBox = styled.div<{ mode: string }>`
   }
 `;
 
-export const Mode = styled.div`
+export const Mode = styled(Menu)`
+  transition: all 0.3s;
+
+  ${(prop) =>
+    prop.mode === 'true' ? 'transform: scaleX(-1) scaleY(-1);' : ''};
+`;
+
+export const MenuIcon = styled.div<{ iconUrl: string }>`
   width: 1.5rem;
   height: 1.5rem;
 
-  background-image: url(${ModeIcon});
+  background-image: url(${(prop) => prop.iconUrl});
   background-repeat: no-repeat;
   background-size: cover;
-
-  cursor: pointer;
 `;
