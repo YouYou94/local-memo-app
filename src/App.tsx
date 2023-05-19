@@ -11,8 +11,10 @@ function App() {
 
   useEffect(() => {
     const notes = localStorage.getItem('memo');
+    const mode = localStorage.getItem('mode');
 
-    if (!notes) localStorage.setItem('memo', JSON.stringify({}));
+    if (!notes) localStorage.setItem('memo', JSON.stringify([]));
+    if (!mode) localStorage.setItem('mode', JSON.stringify(false));
   }, []);
 
   return (

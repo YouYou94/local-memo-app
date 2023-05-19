@@ -12,11 +12,16 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import AddIcon from '../../assets/menu/add.png';
 import ModeIcon from '../../assets/menu/mode.png';
+import { useEffect } from 'react';
 
 export const Nav = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [mode, setMode] = useRecoilState(modeState);
+
+  useEffect(() => {
+    localStorage.setItem('mode', JSON.stringify(mode));
+  }, [mode]);
 
   return (
     <NavBox>
