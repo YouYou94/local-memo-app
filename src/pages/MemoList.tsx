@@ -6,7 +6,6 @@ const MemoList = () => {
     JSON.parse(localStorage.getItem('memo') || '[]'),
   );
 
-  console.log(memos);
   return <List state={memos} setState={setMemos} />;
 };
 
