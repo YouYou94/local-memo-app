@@ -8,7 +8,7 @@ export const Cover = () => {
     <Box>
       <Title>LMemo</Title>
       <ButtonBox>
-        <Button onClick={() => navigate('/off-line-memo-app/memo')}>
+        <Button onClick={() => navigate('/local-memo-app/memo')}>
           → Start
         </Button>
       </ButtonBox>

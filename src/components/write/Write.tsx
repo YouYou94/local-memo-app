@@ -68,7 +68,7 @@ export const Write = ({
 
     localStorage.setItem('memo', JSON.stringify([object, ...existingDatas]));
 
-    navigate('/off-line-memo-app/memo');
+    navigate('/local-memo-app/memo');
 
     alert('저장되었습니다!');
   };
@@ -87,7 +87,7 @@ export const Write = ({
 
     localStorage.setItem('memo', JSON.stringify(existingDatas));
 
-    navigate('/off-line-memo-app/memo');
+    navigate('/local-memo-app/memo');
 
     alert('수정되었습니다!');
   };
