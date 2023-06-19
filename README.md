@@ -9,9 +9,13 @@
 
 - Typescript | React | Recoil | Styled-Components
 
+</br>
+
 ## 배포
 
 - 주소 : http://YouYou94.github.io/off-line-memo-app
+
+</br>
 
 ## 프로젝트를 통해 배운점
 
