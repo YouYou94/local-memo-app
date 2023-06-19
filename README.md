@@ -13,7 +13,7 @@
 
 ## 배포
 
-- 주소 : http://YouYou94.github.io/off-line-memo-app
+- 주소 : http://YouYou94.github.io/local-memo-app
 
 </br>
 
@@ -26,4 +26,20 @@
 </br>
 </br>
 
-<img src='src/assets/readme/memoapp.png' alt="메모앱 시작화면">
+### 1. 시작 화면
+
+<img src='src/assets/readme/cover.png' alt="시작 화면">
+
+</br>
+</br>
+
+### 2. 메모 조회
+
+<img src='src/assets/readme/memo.png' alt="메모 조회">
+
+</br>
+</br>
+
+### 3. 메모 작성
+
+<img src='src/assets/readme/memoapp.png' alt="메모 작성">
