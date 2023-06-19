@@ -1,6 +1,6 @@
-# OMemo : 오프라인 메모 앱
+# L(ocal)Memo : 로컬 메모 앱
 
-- React + Typescript + Recoil을 사용하여 메모를 작성하고 저장할 수 있는 웹페이지입니다. Typescript를 배우고 처음으로 만들어 본 웹페이지이며, 메모 CRUD 기능을 구현해보면서 Typescript 기술을 공부할 수 있었던 계기가 되었습니다.
+- React + Typescript + Recoil을 사용하여 메모를 작성하고 로컬스토리지에 저장하여 사용할 수 있는 웹페이지입니다. Typescript를 배우고 처음으로 만들어 본 웹페이지이며, 메모 CRUD 기능을 구현해보면서 Typescript 기술을 공부할 수 있었던 계기가 되었습니다.
 
 </br>
 </br>

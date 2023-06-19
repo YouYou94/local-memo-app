@@ -26,17 +26,13 @@ export const Nav = () => {
   return (
     <NavBox mode={mode.toString()}>
       <TitleBox>
-        {location.pathname !== '/off-line-memo-app' ? (
-          <Title>OMemo</Title>
-        ) : (
-          <></>
-        )}
+        {location.pathname !== '/local-memo-app' ? <Title>LMemo</Title> : <></>}
       </TitleBox>
       <MenuBox>
-        {location.pathname === '/off-line-memo-app/memo' ? (
+        {location.pathname === '/local-memo-app/memo' ? (
           <Menu
             mode={mode.toString()}
-            onClick={() => navigate('/off-line-memo-app/memo/enrol')}
+            onClick={() => navigate('/local-memo-app/memo/enrol')}
             title="메모추가"
           >
             <MenuIcon iconUrl={AddIcon} />

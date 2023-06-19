@@ -6,7 +6,7 @@ export const Cover = () => {
 
   return (
     <Box>
-      <Title>OMemo</Title>
+      <Title>LMemo</Title>
       <ButtonBox>
         <Button onClick={() => navigate('/off-line-memo-app/memo')}>
           → Start
