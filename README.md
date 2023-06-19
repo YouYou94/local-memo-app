@@ -22,4 +22,4 @@
 </br>
 </br>
 
-<img src='readme/memoapp.png' alt="메모앱 시작화면">
+<img src='src/assets/readme/memoapp.png' alt="메모앱 시작화면">
